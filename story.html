@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Story | Silver Shield LLC</title>
+<meta name="description" content="The story behind Silver Shield — an old tale of a young knight named Roland, a faithful watch, and the highest honor of the kingdom.">
+<meta name="author" content="Silver Shield LLC">
+
+<!-- Open Graph -->
+<meta property="og:title" content="The Story | Silver Shield LLC">
+<meta property="og:description" content="The legend of Sir Roland and the Knights of the Silver Shield — and why we carry it.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://silvershield.llc/story">
+<meta property="og:image" content="https://silvershield.llc/og-image.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Story | Silver Shield LLC">
+<meta name="twitter:description" content="The legend of Sir Roland and the Knights of the Silver Shield — and why we carry it.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 38'%3E%3Cpath d='M16 2L2 8v12c0 9 14 16 14 16s14-7 14-16V8L16 2z' fill='%23c9a84c' stroke='%2316161c' stroke-width='1'/%3E%3C/svg%3E">
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+<!-- Fonts: adds Cormorant Garamond for storybook serif body -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Shared Stylesheet -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="story">
+
+  <!-- ============================================================
+       LOADING SCREEN
+       ============================================================ -->
+  <div class="loader" id="loader">
+    <svg class="loader-shield" viewBox="0 0 60 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="loaderShieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#d4d4dc"/>
+          <stop offset="100%" stop-color="#a0a0ae"/>
+        </linearGradient>
+      </defs>
+      <path d="M30 4L6 14v20c0 16 24 28 24 28s24-12 24-28V14L30 4z"
+            fill="none" stroke="url(#loaderShieldGrad)" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M30 12L14 18v14c0 11 16 20 16 20s16-9 16-20V18L30 12z"
+            fill="none" stroke="#b8b8c4" stroke-width="1" stroke-linejoin="round" opacity="0.5"/>
+    </svg>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <div class="loader-text">Silver Shield</div>
+  </div>
+
+  <!-- ============================================================
+       SCROLL PROGRESS BAR
+       ============================================================ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <header class="nav" id="nav" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="Silver Shield Home">
+      <svg class="nav-logo-shield" viewBox="0 0 32 38" width="28" height="34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="navShieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#d4d4dc"/>
+            <stop offset="100%" stop-color="#a0a0ae"/>
+          </linearGradient>
+        </defs>
+        <path d="M16 2L2 8v12c0 9 14 16 14 16s14-7 14-16V8L16 2z"
+              fill="none" stroke="url(#navShieldGrad)" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M16 7L6 11v8c0 7 10 12 10 12s10-5 10-12v-8L16 7z"
+              fill="none" stroke="#b8b8c4" stroke-width="0.8" stroke-linejoin="round" opacity="0.5"/>
+      </svg>
+      <span class="nav-brand">SILVER SHIELD</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="story.html" class="nav-link active" aria-current="page">Story</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <a href="contact.html" class="nav-cta btn btn-sm"><span>Get Started</span></a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="story-hero" id="storyHero">
+      <div class="hero-mesh" aria-hidden="true"></div>
+      <div class="bg-geometry" aria-hidden="true"></div>
+      <div class="dot-grid" aria-hidden="true"></div>
+      <div class="gradient-orb gradient-orb--gold" style="width:500px;height:500px;top:5%;left:-10%" aria-hidden="true"></div>
+      <div class="gradient-orb gradient-orb--silver" style="width:380px;height:380px;bottom:5%;right:-8%" aria-hidden="true"></div>
+
+      <div class="story-hero-inner">
+        <span class="section-eyebrow story-hero-eyebrow shimmer-text">A Medieval Tale</span>
+        <div class="story-divider" aria-hidden="true">
+          <span></span><span class="story-star">&#9733;</span><span></span>
+        </div>
+        <h1 class="story-hero-script">Where the Name Comes From</h1>
+      </div>
+    </section>
+
+    <!-- ========== SCENE 1 — The Order ========== -->
+    <section class="story-scene scene-1">
+      <div class="story-bg" aria-hidden="true">
+        <div class="gradient-orb gradient-orb--gold" style="width:420px;height:420px;top:10%;right:-10%"></div>
+        <div class="scene-glow" style="width:240px;height:240px;background:radial-gradient(circle,rgba(232,184,76,.08),transparent 70%);top:30%;left:10%"></div>
+      </div>
+      <div class="story-scene-inner">
+        <div class="story-scene-text" data-narration="audio/wizard/chapter-1.mp3">
+          <span class="story-chapter">Chapter One</span>
+          <h2 class="shimmer-text">The Silver Shield</h2>
+          <button class="wizard-btn" type="button" aria-label="Hear the wizard narrate this chapter">
+            <span class="wizard-btn-icon" aria-hidden="true">
+              <svg class="wizard-btn-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,4 6,20 20,12" fill="currentColor"/></svg>
+              <span class="wizard-btn-bars"><span></span><span></span><span></span></span>
+            </span>
+            <span class="wizard-btn-label">Hear the Tale</span>
+          </button>
+          <p class="story-lead"><span class="story-dropcap">I</span>n Arthurian times there lived an order of knights whose shields shone bright silver. They were strong, kind, and brave.</p>
+          <p>Each new knight began with a dingy, untested shield. With every great deed the silver brightened, and the rarest honor of all was a golden star appearing at the shield&rsquo;s center.</p>
+          <p>The youngest of these knights was a boy named <strong>Roland</strong>. His shield was dull and silver, without a single mark.</p>
+          <blockquote>And more than anything, Roland longed to earn his star.</blockquote>
+        </div>
+        <div class="story-scene-visual">
+          <figure class="story-img-frame">
+            <div class="story-img-placeholder">
+              <img src="images/story-scene-01-intro.jpg" alt="Young knights kneeling at the altar receiving their silver shields, golden light from above" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="story-img-fallback">
+                <svg class="story-img-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M32 6L8 14v18c0 14 24 26 24 26s24-12 24-26V14L32 6z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                  <polygon points="32,22 34.5,28 41,28.5 36,32.5 37.5,39 32,35.5 26.5,39 28,32.5 23,28.5 29.5,28" fill="currentColor" opacity=".5"/>
+                </svg>
+                <div class="story-img-text"><strong>Image 1 &mdash; The Order</strong><span>Young knights kneeling at the altar receiving silver shields, golden light streaming from above.</span></div>
+                <div class="story-img-filename">Place at <code>images/story-scene-01-intro.jpg</code></div>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCENE 2 — The Knights Ride Out ========== -->
+    <section class="story-scene scene-2">
+      <div class="story-bg" aria-hidden="true">
+        <div class="gradient-orb gradient-orb--silver" style="width:420px;height:420px;top:10%;left:-10%"></div>
+        <div class="scene-glow" style="width:260px;height:260px;background:radial-gradient(circle,rgba(200,200,220,.06),transparent 70%);bottom:20%;right:15%"></div>
+      </div>
+      <div class="story-scene-inner reverse">
+        <div class="story-scene-visual">
+          <figure class="story-img-frame">
+            <div class="story-img-placeholder">
+              <img src="images/story-scene-02-intro.jpg" alt="Knights riding out at dawn to face the dark knights, Roland left to guard the gate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="story-img-fallback">
+                <svg class="story-img-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M8 50h48M16 50V28l16-12 16 12v22M22 50V36h20v14" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                  <circle cx="32" cy="32" r="2" fill="currentColor" opacity=".5"/>
+                </svg>
+                <div class="story-img-text"><strong>Image 2 &mdash; The Duty</strong><span>Knights on horseback riding out at dawn to meet the dark knights, while Roland is left alone at the gate.</span></div>
+                <div class="story-img-filename">Place at <code>images/story-scene-02-intro.jpg</code></div>
+              </div>
+            </div>
+          </figure>
+        </div>
+        <div class="story-scene-text" data-narration="audio/wizard/chapter-2.mp3">
+          <span class="story-chapter">Chapter Two</span>
+          <h2 class="shimmer-text">The Duty</h2>
+          <button class="wizard-btn" type="button" aria-label="Hear the wizard narrate this chapter">
+            <span class="wizard-btn-icon" aria-hidden="true">
+              <svg class="wizard-btn-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,4 6,20 20,12" fill="currentColor"/></svg>
+              <span class="wizard-btn-bars"><span></span><span></span><span></span></span>
+            </span>
+            <span class="wizard-btn-label">Hear the Tale</span>
+          </button>
+          <p class="story-lead"><span class="story-dropcap">O</span>ne morning, word reached the castle. The dark knights had crossed the kingdom&rsquo;s border. The captain called every knight of the order to ride out and meet them.</p>
+          <p>The knights mounted their horses. Their shields flashed in the rising sun. Roland&rsquo;s heart pounded. At last, his chance for glory had come.</p>
+          <p>But the captain turned to him. &ldquo;Roland. Someone must guard the castle gate. I am giving that task to you.&rdquo;</p>
+          <blockquote>And so the knights rode away, while Roland stayed behind, watching the dust settle on the empty road.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCENE 3 — The Old Woman ========== -->
+    <section class="story-scene scene-3">
+      <div class="story-bg" aria-hidden="true">
+        <div class="gradient-orb gradient-orb--purple" style="width:380px;height:380px;top:20%;right:-8%"></div>
+        <div class="scene-glow" style="width:220px;height:220px;background:radial-gradient(circle,rgba(180,160,200,.08),transparent 70%);top:40%;left:20%"></div>
+      </div>
+      <div class="story-scene-inner">
+        <div class="story-scene-text" data-narration="audio/wizard/chapter-3.mp3">
+          <span class="story-chapter">Chapter Three</span>
+          <h2 class="shimmer-text">The Witch</h2>
+          <button class="wizard-btn" type="button" aria-label="Hear the wizard narrate this chapter">
+            <span class="wizard-btn-icon" aria-hidden="true">
+              <svg class="wizard-btn-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,4 6,20 20,12" fill="currentColor"/></svg>
+              <span class="wizard-btn-bars"><span></span><span></span><span></span></span>
+            </span>
+            <span class="wizard-btn-label">Hear the Tale</span>
+          </button>
+          <p class="story-lead"><span class="story-dropcap">S</span>oon after the knights had gone, an old beggar woman came hobbling up to the gate. Her cloak was torn and her voice thin as paper.</p>
+          <p>&ldquo;Brave young knight,&rdquo; she said, &ldquo;let me sit by your fire inside the walls. I am cold and starving. Surely no one will mind if you open the gate for an old woman.&rdquo;</p>
+          <p>Roland&rsquo;s heart ached for her. He almost lifted the latch. Then he remembered his captain&rsquo;s words.</p>
+          <blockquote>&ldquo;Forgive me, good mother. I cannot open the gate. But wait, and I will bring you bread and a warm blanket.&rdquo;</blockquote>
+          <p>The old woman&rsquo;s eyes flashed. She tore the cloak from her shoulders and stood revealed as a witch with a wicked grin, then fled cackling into the forest.</p>
+        </div>
+        <div class="story-scene-visual">
+          <figure class="story-img-frame">
+            <div class="story-img-placeholder">
+              <img src="images/story-scene-03-intro.jpg" alt="A beggar woman at the castle gate revealed as a witch, throwing off her torn cloak" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="story-img-fallback">
+                <svg class="story-img-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="32" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                  <path d="M22 56V38c0-6 4-10 10-10s10 4 10 10v18" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                  <path d="M28 56v-6M36 56v-6" stroke="currentColor" stroke-width="1.2"/>
+                </svg>
+                <div class="story-img-text"><strong>Image 3 &mdash; The Witch</strong><span>A beggar woman at the gate revealing herself as a witch, throwing off her cloak as she flees toward the dark forest.</span></div>
+                <div class="story-img-filename">Place at <code>images/story-scene-03-intro.jpg</code></div>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCENE 4 — The Jester ========== -->
+    <section class="story-scene scene-4">
+      <div class="story-bg" aria-hidden="true">
+        <div class="gradient-orb gradient-orb--gold" style="width:380px;height:380px;top:15%;left:-10%"></div>
+        <div class="scene-glow" style="width:240px;height:240px;background:radial-gradient(circle,rgba(232,184,76,.10),transparent 70%);bottom:25%;right:20%"></div>
+      </div>
+      <div class="story-scene-inner reverse">
+        <div class="story-scene-visual">
+          <figure class="story-img-frame">
+            <div class="story-img-placeholder">
+              <img src="images/story-scene-04-intro.jpg" alt="A jester at the castle gate offering a glowing magical sword that fades to wood as he transforms into a sorcerer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="story-img-fallback">
+                <svg class="story-img-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M22 18l-6-6M42 18l6-6M32 16v40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                  <circle cx="14" cy="10" r="2" fill="currentColor" opacity=".5"/>
+                  <circle cx="50" cy="10" r="2" fill="currentColor" opacity=".5"/>
+                  <circle cx="32" cy="56" r="2" fill="currentColor" opacity=".5"/>
+                  <path d="M20 36c4 4 8 4 12 4s8 0 12-4" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                </svg>
+                <div class="story-img-text"><strong>Image 4 &mdash; The Wizard</strong><span>A jester at the gate offering a glowing silver-flame sword. Behind him, his motley begins to fall away to reveal a tall sorcerer.</span></div>
+                <div class="story-img-filename">Place at <code>images/story-scene-04-intro.jpg</code></div>
+              </div>
+            </div>
+          </figure>
+        </div>
+        <div class="story-scene-text" data-narration="audio/wizard/chapter-4.mp3">
+          <span class="story-chapter">Chapter Four</span>
+          <h2 class="shimmer-text">The Wizard</h2>
+          <button class="wizard-btn" type="button" aria-label="Hear the wizard narrate this chapter">
+            <span class="wizard-btn-icon" aria-hidden="true">
+              <svg class="wizard-btn-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,4 6,20 20,12" fill="currentColor"/></svg>
+              <span class="wizard-btn-bars"><span></span><span></span><span></span></span>
+            </span>
+            <span class="wizard-btn-label">Hear the Tale</span>
+          </button>
+          <p class="story-lead"><span class="story-dropcap">A</span>s the sun grew low, a strange laughter rolled up the road. A jester in bright motley danced into view, juggling fire and pulling silk from the air. Roland watched in wonder.</p>
+          <p>The jester drew from nothing a sword that shone with silver flame. &ldquo;Take this blade, young knight. Ride and save your captain. I will watch your gate while you win your glory.&rdquo;</p>
+          <p>Roland&rsquo;s hand reached for the hilt. A magic sword. A chance to fight beside his brothers. Then he remembered the trust placed upon him.</p>
+          <blockquote>&ldquo;I cannot, friend. I was set here to watch, and watch I will.&rdquo;</blockquote>
+          <p>The bright sword withered in the jester&rsquo;s hand into a child&rsquo;s wooden toy. The motley fell away, and a tall sorcerer stood in his place. He hissed once and vanished down the dark road.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCENE 5 — The Black Knight ========== -->
+    <section class="story-scene scene-5">
+      <div class="story-bg" aria-hidden="true">
+        <div class="gradient-orb gradient-orb--purple" style="width:420px;height:420px;top:0%;right:-10%"></div>
+        <div class="scene-glow" style="width:260px;height:260px;background:radial-gradient(circle,rgba(120,40,40,.10),transparent 70%);top:30%;left:15%"></div>
+      </div>
+      <div class="story-scene-inner">
+        <div class="story-scene-text" data-narration="audio/wizard/chapter-5.mp3">
+          <span class="story-chapter">Chapter Five</span>
+          <h2 class="shimmer-text">The Knight</h2>
+          <button class="wizard-btn" type="button" aria-label="Hear the wizard narrate this chapter">
+            <span class="wizard-btn-icon" aria-hidden="true">
+              <svg class="wizard-btn-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,4 6,20 20,12" fill="currentColor"/></svg>
+              <span class="wizard-btn-bars"><span></span><span></span><span></span></span>
+            </span>
+            <span class="wizard-btn-label">Hear the Tale</span>
+          </button>
+          <p class="story-lead"><span class="story-dropcap">A</span>t midnight, a wounded knight came crawling from the forest. His armor was bloodied, and his face was one Roland knew.</p>
+          <p>&ldquo;Brother,&rdquo; the knight gasped, &ldquo;we are losing. The captain has fallen. Ride to us. I will hold the gate in your place.&rdquo;</p>
+          <p>Roland&rsquo;s hand trembled on his sword. His friends were dying. His brothers needed him. He stepped toward the gate. Then he remembered the duty placed upon him.</p>
+          <blockquote>&ldquo;I cannot leave this gate. Not for any battle but the one my captain gives me.&rdquo;</blockquote>
+          <p>The wounded knight rose to his full height. His armor turned black, his face turned cruel. He cursed Roland with a voice like cold iron and fled into the trees.</p>
+        </div>
+        <div class="story-scene-visual">
+          <figure class="story-img-frame">
+            <div class="story-img-placeholder">
+              <img src="images/story-scene-05-intro.jpg" alt="A wounded knight crawling from the forest at midnight, transforming into a black-armored dark knight" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="story-img-fallback">
+                <svg class="story-img-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M16 50h32M20 50V32c0-4 4-8 12-8s12 4 12 8v18" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                  <rect x="26" y="14" width="12" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                  <line x1="28" y1="20" x2="36" y2="20" stroke="currentColor" stroke-width="1.2"/>
+                  <path d="M48 24l8-8M52 20l4-4" stroke="currentColor" stroke-width="1.2" opacity=".5"/>
+                </svg>
+                <div class="story-img-text"><strong>Image 5 &mdash; The Knight</strong><span>A wounded knight at the gate, his armor darkening to black as he transforms into a cruel dark knight under stormy skies.</span></div>
+                <div class="story-img-filename">Place at <code>images/story-scene-05-intro.jpg</code></div>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCENE 6 — The Knights Return ========== -->
+    <section class="story-scene scene-6">
+      <div class="story-bg" aria-hidden="true">
+        <div class="gradient-orb gradient-orb--gold" style="width:480px;height:480px;top:10%;left:-10%"></div>
+        <div class="scene-glow" style="width:300px;height:300px;background:radial-gradient(circle,rgba(232,184,76,.10),transparent 70%);bottom:15%;right:10%"></div>
+      </div>
+      <div class="story-scene-inner reverse">
+        <div class="story-scene-visual">
+          <figure class="story-img-frame">
+            <div class="story-img-placeholder">
+              <img src="images/story-scene-06-intro.jpg" alt="Knights returning at dawn, pointing in awe at the golden star upon Roland's silver shield" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="story-img-fallback">
+                <svg class="story-img-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="32" cy="22" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity=".7"/>
+                  <path d="M14 50h36M18 50V36c0-4 4-6 14-6s14 2 14 6v14" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                  <path d="M24 36l-2-4M40 36l2-4" stroke="currentColor" stroke-width="1.2"/>
+                </svg>
+                <div class="story-img-text"><strong>Image 6 &mdash; The Star</strong><span>Knights returning at dawn slow as they near the gate, murmuring and pointing in awe at the golden star upon Roland&rsquo;s silver shield.</span></div>
+                <div class="story-img-filename">Place at <code>images/story-scene-06-intro.jpg</code></div>
+              </div>
+            </div>
+          </figure>
+        </div>
+        <div class="story-scene-text" data-narration="audio/wizard/chapter-6.mp3">
+          <span class="story-chapter">Chapter Six</span>
+          <h2 class="shimmer-text">The Star</h2>
+          <button class="wizard-btn" type="button" aria-label="Hear the wizard narrate this chapter">
+            <span class="wizard-btn-icon" aria-hidden="true">
+              <svg class="wizard-btn-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,4 6,20 20,12" fill="currentColor"/></svg>
+              <span class="wizard-btn-bars"><span></span><span></span><span></span></span>
+            </span>
+            <span class="wizard-btn-label">Hear the Tale</span>
+          </button>
+          <p class="story-lead"><span class="story-dropcap">A</span>t dawn, the road filled with the sound of horses. The knights returned weary and dusty, but victorious.</p>
+          <p>As they neared the gate they slowed, murmuring among themselves, their eyes wide with wonder. They pointed at Roland and whispered. Roland looked behind him and beside him, searching for what they saw.</p>
+          <p>Then the king himself rode forward and spoke softly. &ldquo;Your shield, Roland. The star.&rdquo;</p>
+          <p>Roland looked down. There upon his plain silver shield shone a single, bright golden star. Trembling, he told them of the witch, the wizard, and the dark knight at the gate.</p>
+          <blockquote>The king laid a hand on his shoulder. &ldquo;You faced the hardest battle of all, Roland. And you did not yield.&rdquo;</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCENE 7 — THE LESSON / OUR STORY ========== -->
+    <section class="story-scene scene-7 scene-final section-light">
+      <div class="story-bg" aria-hidden="true">
+        <div class="gradient-orb gradient-orb--gold" style="width:560px;height:560px;top:5%;left:50%;transform:translateX(-50%)"></div>
+        <div class="bg-rings" style="width:500px;height:500px;top:10%;left:50%;transform:translateX(-50%)"></div>
+        <div class="scene-glow" style="width:340px;height:340px;background:radial-gradient(circle,rgba(232,184,76,.14),transparent 70%);top:30%;left:50%;transform:translateX(-50%)"></div>
+      </div>
+      <div class="story-scene-inner story-scene-final-inner">
+        <div class="story-final-visual">
+          <figure class="story-img-frame story-img-frame--final">
+            <div class="story-img-placeholder">
+              <img src="images/story-scene-07-intro.jpg" alt="A silver shield with a radiant golden star at its center, knights kneeling around it" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="story-img-fallback">
+                <svg class="story-img-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M32 6L8 14v18c0 14 24 26 24 26s24-12 24-26V14L32 6z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                  <polygon points="32,22 34.5,28 41,28.5 36,32.5 37.5,39 32,35.5 26.5,39 28,32.5 23,28.5 29.5,28" fill="currentColor"/>
+                </svg>
+                <div class="story-img-text"><strong>Image 7 &mdash; The Golden Star</strong><span>A silver shield bearing a single radiant golden star, surrounded by light. Knights kneel around it in awe.</span></div>
+                <div class="story-img-filename">Place at <code>images/story-scene-07-intro.jpg</code></div>
+              </div>
+            </div>
+          </figure>
+        </div>
+
+        <div class="story-final-text">
+          <div class="story-lesson-block" data-narration="audio/wizard/chapter-7.mp3">
+            <span class="story-chapter">Closing</span>
+            <h2 class="shimmer-text">The Lesson</h2>
+            <button class="wizard-btn" type="button" aria-label="Hear the wizard narrate the lesson">
+              <span class="wizard-btn-icon" aria-hidden="true">
+                <svg class="wizard-btn-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,4 6,20 20,12" fill="currentColor"/></svg>
+                <span class="wizard-btn-bars"><span></span><span></span><span></span></span>
+              </span>
+              <span class="wizard-btn-label">Hear the Tale</span>
+            </button>
+            <p class="story-lead"><span class="story-dropcap">T</span>he silver shield is humility. The golden star is the reward for the dirty work no one watches.</p>
+            <p>It is given to those who hold the line for the bigger picture, when every selfish desire whispers to wander off. Roland was honored not for the battle everyone watched, but for the gate everyone forgot.</p>
+          </div>
+
+          <div class="story-divider" aria-hidden="true">
+            <span></span><span class="story-star">&#9733;</span><span></span>
+          </div>
+
+          <p class="story-our-story-lead">And this is why we built <strong>Silver Shield</strong>.</p>
+          <div class="story-pitch-block" data-narration="audio/wizard/pitch.mp3">
+            <button class="wizard-btn" type="button" aria-label="Hear the wizard narrate this section">
+              <span class="wizard-btn-icon" aria-hidden="true">
+                <svg class="wizard-btn-play" viewBox="0 0 24 24" width="14" height="14"><polygon points="6,4 6,20 20,12" fill="currentColor"/></svg>
+                <span class="wizard-btn-bars"><span></span><span></span><span></span></span>
+              </span>
+              <span class="wizard-btn-label">Hear the Tale</span>
+            </button>
+            <p>Small business owners spend their days holding the gate. Answering the email, chasing the invoice, doing the unseen work that keeps the kingdom standing. The world chases the loud battles. The real work is at the gate.</p>
+            <p>We carry that work for you. The repetitive tasks, the systems that need watching, the things that wear you down. We create your business its very own Roland, who will never leave the gates unguarded. Demand is climbing, so click below to save your spot now.</p>
+          </div>
+          <blockquote class="story-final-quote">You ride to the battles that matter. We will guard the gate.</blockquote>
+
+          <div class="story-cta">
+            <a href="contact.html" class="btn btn-lg"><span>Book Your Free Call</span></a>
+          </div>
+
+          <p class="story-attribution">Inspired by <em>Sir Roland and the Knights of the Silver Shield</em> by Raymond Macdonald Alden, 1906.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo" aria-label="Silver Shield Home">
+          <svg viewBox="0 0 32 38" width="24" height="29" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="footerShieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#d4d4dc"/>
+                <stop offset="100%" stop-color="#a0a0ae"/>
+              </linearGradient>
+            </defs>
+            <path d="M16 2L2 8v12c0 9 14 16 14 16s14-7 14-16V8L16 2z"
+                  fill="none" stroke="url(#footerShieldGrad)" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+          <span>Silver Shield</span>
+        </a>
+        <p class="footer-desc">AI implementation for small businesses &mdash; custom automations, strategy, and intelligent systems that save time and drive growth.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="story.html">Story</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#">Careers</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <a href="mailto:info@silvershield.llc" aria-label="Email">Email</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Silver Shield LLC. All rights reserved.</p>
+      <div class="footer-socials" aria-label="Social media links">
+        <a href="mailto:info@silvershield.llc" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2 6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm2 0l8 5 8-5v12H4V6z" fill="currentColor"/>
+            <path d="M4 6l8 5 8-5" fill="none" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       BACK TO TOP BUTTON
+       ============================================================ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <polyline points="6,15 12,9 18,15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="scripts.js"></script>
+
+</body>
+</html>

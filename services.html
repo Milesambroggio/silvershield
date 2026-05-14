@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Silver Shield LLC</title>
+<meta name="description" content="Silver Shield LLC offers three AI implementation services for small businesses: custom automations, AI strategy and setup, and custom agent development.">
+<meta name="keywords" content="AI automations, AI strategy, custom AI agents, small business AI, AI implementation, Silver Shield">
+<meta name="author" content="Silver Shield LLC">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Services | Silver Shield LLC">
+<meta property="og:description" content="Custom AI automations, strategy and setup, and agent development — built for small businesses ready to work smarter.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://silvershield.llc/services">
+<meta property="og:image" content="https://silvershield.llc/og-image.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Services | Silver Shield LLC">
+<meta name="twitter:description" content="Custom AI automations, strategy and setup, and agent development — built for small businesses ready to work smarter.">
+
+<!-- Favicon placeholder -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 38'%3E%3Cpath d='M16 2L2 8v12c0 9 14 16 14 16s14-7 14-16V8L16 2z' fill='%23c9a84c' stroke='%2316161c' stroke-width='1'/%3E%3C/svg%3E">
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Shared Stylesheet -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body data-page="services">
+
+<!-- ===================== SCROLL PROGRESS ===================== -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ===================== LOADING SCREEN ===================== -->
+<div class="loader" id="loader" aria-hidden="true">
+  <svg class="loader-shield" viewBox="0 0 60 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30 4L6 14v20c0 16 24 28 24 28s24-12 24-28V14L30 4z" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+    <path d="M30 4L6 14v20c0 16 24 28 24 28s24-12 24-28V14L30 4z" fill="rgba(201,168,76,.06)"/>
+    <polygon points="30,24 32.4,29.6 38.4,30 33.6,34 35.2,40 30,36.8 24.8,40 26.4,34 21.6,30 27.6,29.6" fill="#c9a84c" opacity="0" class="loader-star"/>
+  </svg>
+  <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
+  <div class="loader-text">Silver Shield</div>
+</div>
+
+<!-- ===================== NAVIGATION ===================== -->
+<header class="nav" id="nav" role="banner">
+  <a href="index.html" class="nav-logo shield-wrap" id="navShield" aria-label="Silver Shield - Home">
+    <svg class="nav-logo-shield" viewBox="0 0 32 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 2L2 8v12c0 9 14 16 14 16s14-7 14-16V8L16 2z" fill="none" stroke="var(--silver-300)" stroke-width="1.2"/>
+      <path d="M16 2L2 8v12c0 9 14 16 14 16s14-7 14-16V8L16 2z" fill="rgba(168,168,180,.04)"/>
+      <polygon class="shield-star-el" points="16,10 17.5,13.8 21.6,14.1 18.4,16.8 19.5,20.8 16,18.4 12.5,20.8 13.6,16.8 10.4,14.1 14.5,13.8" fill="#c9a84c"/>
+    </svg>
+    <span class="nav-brand">Silver Shield</span>
+  </a>
+
+  <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active" aria-current="page">Services</a>
+    <a href="story.html">Story</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <a href="contact.html" class="nav-cta btn btn-sm"><span>Get Started</span></a>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero">
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="bg-geometry" aria-hidden="true"></div>
+  <div class="dot-grid" aria-hidden="true"></div>
+  <div class="bg-streak bg-streak--1" aria-hidden="true"></div>
+  <div class="gradient-orb gradient-orb--gold" style="width:400px;height:400px;top:15%;left:-5%" aria-hidden="true"></div>
+  <div class="gradient-orb gradient-orb--purple" style="width:300px;height:300px;bottom:10%;right:-5%" aria-hidden="true"></div>
+  <div class="bg-rings" style="width:350px;height:350px;top:5%;right:-5%" aria-hidden="true"></div>
+  <h1 class="shimmer-text">Our Services</h1>
+  <p class="shimmer-text">Three services. One outcome: AI that works.</p>
+</section>
+
+<div class="glow-divider" aria-hidden="true"></div>
+
+<!-- ===================== 1. THE OUTCOME — what you get ===================== -->
+<section class="services-section section-alt" id="outcome">
+  <div class="bg-diamonds" aria-hidden="true"></div>
+  <div class="gradient-orb gradient-orb--gold" style="width:350px;height:350px;top:20%;right:-8%" aria-hidden="true"></div>
+  <div class="bg-rings" style="width:400px;height:400px;bottom:-10%;left:-8%" aria-hidden="true"></div>
+  <div class="container">
+    <span class="section-eyebrow">What You Get</span>
+    <h2 class="section-heading shimmer-text">Pick Your Outcome</h2>
+    <p class="section-sub shimmer-text">Each service is built around a result, not a buzzword.</p>
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <div class="services-grid">
+
+      <article class="service-card" id="operations">
+        <span class="service-number">01</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="8" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="26" y="8" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="8" y="26" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="26" y="26" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M22 15h4M22 33h4M15 22v4M33 22v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="service-title shimmer-text">Custom AI Automations</h3>
+        <p class="service-desc shimmer-text">Get 20+ hours a week back. Email, documents, leads, scheduling — handled.</p>
+      </article>
+
+      <article class="service-card" id="growth">
+        <span class="service-number">02</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="18" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M24 8v2M24 26v2M14 18h2M32 18h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="24" cy="18" r="3" fill="currentColor" opacity="0.3"/>
+            <path d="M18 32h12M20 36h8M22 40h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="service-title shimmer-text">AI Strategy &amp; Setup</h3>
+        <p class="service-desc shimmer-text">Know exactly which AI tools to use, what they cost, and what they'll return.</p>
+      </article>
+
+      <article class="service-card" id="ai">
+        <span class="service-number">03</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="24" cy="24" r="2" fill="currentColor" opacity="0.5"/>
+            <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1"/>
+            <circle cx="36" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1"/>
+            <circle cx="12" cy="36" r="3" fill="none" stroke="currentColor" stroke-width="1"/>
+            <circle cx="36" cy="36" r="3" fill="none" stroke="currentColor" stroke-width="1"/>
+            <line x1="14.5" y1="14.5" x2="21.5" y2="21.5" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+            <line x1="33.5" y1="14.5" x2="26.5" y2="21.5" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+            <line x1="14.5" y1="33.5" x2="21.5" y2="26.5" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+            <line x1="33.5" y1="33.5" x2="26.5" y2="26.5" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+          </svg>
+        </div>
+        <h3 class="service-title shimmer-text">Custom Agents &amp; Systems</h3>
+        <p class="service-desc shimmer-text">Purpose-built AI for your exact workflow. We build, deploy, and maintain it.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider" aria-hidden="true"></div>
+
+<!-- ===================== 2. HOW WE DO IT BEST — process ===================== -->
+<section class="process section-light" id="how">
+  <span class="section-eyebrow">How We Work</span>
+  <h2 class="section-heading shimmer-text">Live in 30 Days</h2>
+  <p class="section-sub shimmer-text">Four steps from idea to working AI.</p>
+
+  <div class="process-steps">
+    <div class="process-line"><div class="process-line-fill"></div></div>
+
+    <div class="process-step">
+      <div class="step-marker">01</div>
+      <div class="step-body">
+        <h4 class="shimmer-text">Discover</h4>
+        <p class="shimmer-text">We find where you're losing time or money.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-marker">02</div>
+      <div class="step-body">
+        <h4 class="shimmer-text">Plan</h4>
+        <p class="shimmer-text">Clear scope, fixed price, expected ROI. You approve before we build.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-marker">03</div>
+      <div class="step-body">
+        <h4 class="shimmer-text">Build &amp; Deploy</h4>
+        <p class="shimmer-text">We ship the system into your workflow — minimal disruption.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-marker">04</div>
+      <div class="step-body">
+        <h4 class="shimmer-text">Optimize</h4>
+        <p class="shimmer-text">We monitor and upgrade as your business grows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="glow-divider" aria-hidden="true"></div>
+
+<!-- ===================== 3. JOIN US ===================== -->
+<section class="bridge">
+  <div class="bridge-inner">
+    <span class="section-eyebrow">Get Started</span>
+    <h2 class="shimmer-text">One call. Real answers. No commitment.</h2>
+    <p class="shimmer-text">Free 30-minute discovery call. We map where AI fits in your business.</p>
+    <div style="margin-top:2.5rem;">
+      <a href="contact.html" class="btn"><span>Book Your Free Call</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand-col">
+      <div class="footer-logo">
+        <svg viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 1L1 5v9c0 7 11 12 11 12s11-5 11-12V5L12 1z" fill="none" stroke="var(--silver-400)" stroke-width="1"/>
+          <polygon points="12,7 13.2,10.5 17,10.7 14,12.8 15,16.2 12,14 9,16.2 10,12.8 7,10.7 10.8,10.5" fill="var(--gold)" opacity=".6"/>
+        </svg>
+        <span>Silver Shield</span>
+      </div>
+      <p class="footer-desc">AI implementation for small businesses — custom automations, strategy, and intelligent systems that save time and drive growth.</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Services</h5>
+      <a href="services.html#operations">Custom AI Automations</a>
+      <a href="services.html#growth">AI Strategy & Setup</a>
+      <a href="services.html#ai">Custom Agent Development</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Silver Shield LLC. All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="mailto:info@silvershield.llc" aria-label="Email">
+        <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M2 6l10 7 10-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== BACK TO TOP ===================== -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 13V3M3 7l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- ===================== GSAP CDN ===================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+<!-- Shared Scripts -->
+<script src="scripts.js"></script>
+
+</body>
+</html>

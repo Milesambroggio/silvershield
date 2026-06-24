@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TagBack Drone Media | Cinematic Aerial Video for Denver Real Estate</title>
-<meta name="description" content="FAA-certified cinematic drone tours, FPV flythroughs, and aerial videography that make Denver real estate listings sell faster. Book a shoot in seconds — reply guaranteed within 24 hours.">
-<meta name="keywords" content="Denver drone real estate, aerial videography Denver, FPV real estate tour, real estate drone video, MLS listing video, TagBack Drone Media">
+<meta name="description" content="FAA Part 107 certified cinematic drone tours, FPV flythroughs, and aerial videography that make Denver real estate listings stand out. Book a shoot — reply guaranteed within 24 hours.">
+<meta name="keywords" content="Denver drone real estate, aerial videography Denver, FPV real estate tour, real estate drone video, MLS listing video, TagBack Drone Media, Heath Dugger">
 <meta name="author" content="TagBack Drone Media">
 
 <meta property="og:title" content="TagBack Drone Media | Cinematic Aerial Video for Denver Real Estate">
-<meta property="og:description" content="FAA-certified drone tours, FPV flythroughs, and steady-cam walkthroughs that get Denver listings seen, shared, and sold.">
+<meta property="og:description" content="Cinematic drone tours, FPV flythroughs, and steady-cam walkthroughs that get Denver listings seen, shared, and sold.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tagbackmedia.com">
 <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/5763d947-9035-4aa7-8e49-fb3046eb2a24/fulllogo_transparent_nobuffer.png/:/rs=w:1200">
@@ -17,303 +17,280 @@
 <link rel="icon" type="image/png" href="https://img1.wsimg.com/isteam/ip/5763d947-9035-4aa7-8e49-fb3046eb2a24/fulllogo_transparent_nobuffer.png/:/rs=w:64,h:64,cg:true,m">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#08070f; --bg2:#0d0b17; --bg3:#120f1f; --card:#13111e;
-  --cy:#21e3ff; --pk:#ff2d9b; --pu:#7b5cff;
-  --tx:#ececf4; --mut:#9c9ab2; --line:rgba(150,150,190,.14);
-  --disp:'Space Grotesk',sans-serif; --body:'Inter',sans-serif; --tech:'Orbitron',sans-serif;
-  --max:1180px;
+  --bg:#040406; --bg2:#0b0b0e; --bg3:#101015; --card:#0e0e13;
+  --blue:#5e9be0;        /* steel-blue headings (from his #4682B4, lifted for dark bg) */
+  --indigo:#7b78e8;      /* his indigo #3C3CCB, lifted */
+  --magenta:#e05fb6;     /* his magenta heading accent */
+  --cyan:#56d4ec;        /* from the logo */
+  --tx:#ececf1; --mut:#a7a7b4; --faint:#6f6f7d;
+  --line:rgba(150,150,180,.13);
+  --head:'Cabin',system-ui,sans-serif; --body:'Lato',system-ui,sans-serif;
+  --max:1120px;
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--tx);font-family:var(--body);line-height:1.6;overflow-x:hidden}
+body{background:var(--bg);color:var(--tx);font-family:var(--body);font-weight:400;line-height:1.7;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.grad{background:linear-gradient(100deg,var(--cy),var(--pk));-webkit-background-clip:text;background-clip:text;color:transparent}
-h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.1;letter-spacing:-.01em}
-.eyebrow{font-family:var(--tech);font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--cy)}
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--disp);font-weight:600;font-size:15px;
-  padding:14px 26px;border-radius:40px;cursor:pointer;border:none;transition:transform .2s,box-shadow .3s;letter-spacing:.01em}
-.btn-primary{background:linear-gradient(100deg,var(--cy),var(--pk));color:#070710;box-shadow:0 8px 30px rgba(33,227,255,.28)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,45,155,.4)}
-.btn-ghost{background:rgba(255,255,255,.04);color:var(--tx);border:1px solid var(--line)}
-.btn-ghost:hover{border-color:var(--cy);color:#fff;transform:translateY(-2px)}
-
-/* background glow layers */
-.glow{position:fixed;border-radius:50%;filter:blur(120px);opacity:.5;pointer-events:none;z-index:0}
-.glow.a{width:520px;height:520px;background:rgba(33,227,255,.16);top:-120px;left:-140px}
-.glow.b{width:560px;height:560px;background:rgba(255,45,155,.14);top:40%;right:-180px}
-.glow.c{width:480px;height:480px;background:rgba(123,92,255,.12);bottom:-160px;left:30%}
-.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;
-  background-image:linear-gradient(rgba(123,92,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(123,92,255,.06) 1px,transparent 1px);
-  background-size:60px 60px;mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 80%)}
-main,nav,footer{position:relative;z-index:1}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.18;font-weight:700}
+.eyebrow{font-family:var(--head);font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--magenta)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--head);font-weight:600;font-size:15px;
+  padding:13px 28px;border-radius:6px;cursor:pointer;transition:all .22s;letter-spacing:.01em;border:1px solid transparent}
+.btn-fill{background:var(--magenta);color:#15040f;border-color:var(--magenta)}
+.btn-fill:hover{background:#ec79c6;box-shadow:0 8px 26px rgba(224,95,182,.3)}
+.btn-out{background:transparent;color:var(--tx);border-color:rgba(180,180,210,.35)}
+.btn-out:hover{border-color:var(--cyan);color:#fff}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(8,7,15,.72);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:var(--max);margin:0 auto}
-.nav-logo{display:flex;align-items:center;gap:11px}
-.nav-logo img{height:46px;width:auto;filter:drop-shadow(0 0 10px rgba(33,227,255,.3))}
+nav{position:sticky;top:0;z-index:50;background:rgba(4,4,6,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:13px 24px;max-width:var(--max);margin:0 auto}
+.nav-logo img{height:48px;width:auto}
 .nav-links{display:flex;gap:30px;align-items:center}
-.nav-links a{font-size:14.5px;color:var(--mut);font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--cy)}
-.nav-cta{padding:10px 20px;font-size:14px}
+.nav-links a{font-size:14.5px;color:var(--mut);transition:color .2s}
+.nav-links a:hover{color:var(--cyan)}
+.nav-cta{padding:9px 20px;font-size:14px}
 .nav-toggle{display:none;background:none;border:none;color:var(--tx);cursor:pointer}
-@media(max-width:860px){.nav-links{display:none}}
+@media(max-width:840px){.nav-links a:not(.nav-cta){display:none}.nav-toggle{display:none}}
 
 /* HERO */
-.hero{position:relative;padding:90px 0 70px;text-align:center;overflow:hidden}
-.hero-badge{height:150px;margin:0 auto 26px;filter:drop-shadow(0 0 30px rgba(255,45,155,.35)) drop-shadow(0 0 50px rgba(33,227,255,.25));animation:float 6s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);margin-bottom:18px}
-.hero h1 .grad{display:inline-block}
-.hero-sub{max-width:620px;margin:0 auto 30px;font-size:clamp(1rem,2vw,1.18rem);color:var(--mut)}
+.hero{text-align:center;padding:78px 0 64px;position:relative}
+.hero-badge{height:188px;width:auto;margin:0 auto 30px;display:block;
+  filter:drop-shadow(0 6px 30px rgba(86,212,236,.18)) drop-shadow(0 0 40px rgba(224,95,182,.14))}
+.hero h1{font-size:clamp(2.1rem,5vw,3.5rem);max-width:880px;margin:0 auto 20px;color:#fff;font-weight:700}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero-sub{max-width:600px;margin:0 auto 32px;font-size:clamp(1.02rem,2vw,1.18rem);color:var(--mut);font-weight:300}
 .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.hero-scrolltip{margin-top:42px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
 
-/* TRUST STRIP */
-.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.015)}
-.trust-in{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 38px;padding:20px 24px;max-width:var(--max);margin:0 auto}
-.trust-item{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--tx);font-weight:500}
-.trust-item svg{width:18px;height:18px;color:var(--cy);flex:0 0 18px}
-.trust-item b{color:var(--cy);font-weight:600}
+/* TRUST */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-in{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 22px;padding:18px 24px;max-width:var(--max);margin:0 auto;
+  font-family:var(--head);font-size:13.5px;color:var(--mut);letter-spacing:.02em}
+.trust-in b{color:var(--tx);font-weight:600}
+.trust-dot{width:5px;height:5px;border-radius:50%;background:var(--magenta);opacity:.7}
+@media(max-width:680px){.trust-dot{display:none}}
 
 /* SECTION */
-section{padding:84px 0}
-.sec-head{text-align:center;max-width:640px;margin:0 auto 52px}
-.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:14px 0 14px}
-.sec-head p{color:var(--mut);font-size:1.05rem}
+section{padding:80px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
+.sec-head h2{font-size:clamp(1.7rem,3.6vw,2.5rem);color:#fff;margin:13px 0 12px}
+.sec-head p{color:var(--mut);font-weight:300;font-size:1.05rem}
 
 /* SERVICES */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px 28px;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-6px);border-color:rgba(33,227,255,.45);box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 30px rgba(33,227,255,.08)}
-.card .tag{position:absolute;top:18px;right:18px;font-family:var(--tech);font-size:10px;letter-spacing:.18em;color:var(--pk);border:1px solid rgba(255,45,155,.4);padding:4px 9px;border-radius:20px}
-.card-icon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;margin-bottom:20px;
-  background:linear-gradient(135deg,rgba(33,227,255,.16),rgba(255,45,155,.12));border:1px solid rgba(33,227,255,.3)}
-.card-icon svg{width:28px;height:28px;color:var(--cy)}
-.card h3{font-size:1.3rem;margin-bottom:10px}
-.card p{color:var(--mut);font-size:.97rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:30px 26px;transition:border-color .3s,transform .3s}
+.card:hover{transform:translateY(-4px);border-color:rgba(94,155,224,.4)}
+.card .num{font-family:var(--head);font-size:13px;font-weight:700;color:var(--magenta);letter-spacing:.1em}
+.card h3{font-size:1.28rem;color:var(--blue);margin:14px 0 10px;font-weight:700}
+.card p{color:var(--mut);font-weight:300;font-size:.98rem}
 
-/* PROCESS */
-.process{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;counter-reset:step}
-.step{background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);border:1px solid var(--line);border-radius:16px;padding:28px 24px;position:relative}
-.step .n{font-family:var(--tech);font-size:13px;font-weight:800;color:var(--bg);background:linear-gradient(100deg,var(--cy),var(--pk));width:36px;height:36px;border-radius:50%;display:grid;place-items:center;margin-bottom:16px}
-.step h4{font-family:var(--disp);font-size:1.12rem;margin-bottom:8px}
-.step p{color:var(--mut);font-size:.93rem}
+/* WHY (2x2) */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px 44px}
+.why-item{padding:22px 0;border-top:1px solid var(--line)}
+.why-item h4{color:var(--magenta);font-size:1.08rem;margin-bottom:7px;font-weight:600}
+.why-item p{color:var(--mut);font-weight:300;font-size:.96rem}
 
 /* PORTFOLIO */
-.reel{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.vid{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#000;aspect-ratio:16/9;box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.reel{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.vid{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#000;aspect-ratio:16/9}
 .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* ABOUT */
-.about{display:grid;grid-template-columns:0.85fr 1.15fr;gap:50px;align-items:center}
-@media(max-width:820px){.about{grid-template-columns:1fr;text-align:center}}
-.about-photo{position:relative;justify-self:center}
-.about-photo img{width:300px;height:300px;border-radius:50%;object-fit:cover;border:2px solid rgba(33,227,255,.4);box-shadow:0 0 50px rgba(33,227,255,.18),0 0 80px rgba(255,45,155,.12)}
-.about h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:8px}
-.about .role{font-family:var(--tech);font-size:12px;letter-spacing:.22em;color:var(--pk);text-transform:uppercase;margin-bottom:18px}
-.about p{color:var(--mut);margin-bottom:14px}
-.about .stats{display:flex;gap:30px;margin-top:24px;flex-wrap:wrap;justify-content:center}
-.stat .v{font-family:var(--disp);font-size:1.9rem;font-weight:700;color:#fff}
-.stat .l{font-size:12px;color:var(--mut);letter-spacing:.04em}
+.about{display:grid;grid-template-columns:0.8fr 1.2fr;gap:48px;align-items:center}
+@media(max-width:800px){.about{grid-template-columns:1fr;text-align:center}}
+.about-photo{justify-self:center}
+.about-photo img{width:280px;height:280px;border-radius:50%;object-fit:cover;border:1px solid rgba(94,155,224,.45);
+  box-shadow:0 0 0 6px rgba(94,155,224,.06)}
+.about h2{font-size:clamp(1.7rem,3.6vw,2.4rem);color:var(--blue);margin-bottom:6px}
+.about .role{color:var(--magenta);font-family:var(--head);font-weight:600;font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+.about p{color:var(--mut);font-weight:300;margin-bottom:14px}
+.about .stats{display:flex;gap:34px;margin-top:22px;flex-wrap:wrap;justify-content:flex-start}
+@media(max-width:800px){.about .stats{justify-content:center}}
+.stat .v{font-family:var(--head);font-size:1.7rem;font-weight:700;color:#fff}
+.stat .l{font-size:12.5px;color:var(--faint);letter-spacing:.03em}
 
-/* BOOK / CTA band */
-.book{text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(123,92,255,.16),transparent 70%)}
-.book-card{max-width:760px;margin:0 auto;background:var(--card);border:1px solid rgba(33,227,255,.25);border-radius:24px;padding:54px 36px;box-shadow:0 0 60px rgba(33,227,255,.08)}
-.book h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:16px}
-.book p{color:var(--mut);max-width:520px;margin:0 auto 28px}
-.book-meta{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:26px;color:var(--mut);font-size:14.5px}
-.book-meta a{color:var(--cy)}
-.guarantee{display:inline-flex;align-items:center;gap:9px;background:rgba(33,227,255,.08);border:1px solid rgba(33,227,255,.3);
-  color:#bff1fb;font-size:13px;padding:8px 16px;border-radius:30px;margin-bottom:26px}
-.guarantee svg{width:16px;height:16px;color:var(--cy)}
+/* BOOK */
+.book{text-align:center}
+.book-card{max-width:720px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:50px 34px}
+.guarantee{display:inline-flex;align-items:center;gap:8px;color:var(--cyan);font-family:var(--head);font-weight:600;font-size:13px;
+  letter-spacing:.04em;border:1px solid rgba(86,212,236,.3);border-radius:30px;padding:7px 16px;margin-bottom:22px}
+.guarantee svg{width:15px;height:15px}
+.book h2{font-size:clamp(1.7rem,3.6vw,2.4rem);color:#fff;margin-bottom:14px}
+.book p{color:var(--mut);font-weight:300;max-width:500px;margin:0 auto 26px}
+.book-meta{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:26px;color:var(--mut);font-size:14.5px;font-weight:300}
+.book-meta a{color:var(--cyan)}
 
 /* FOOTER */
-footer{border-top:1px solid var(--line);padding:44px 0 30px;text-align:center;color:var(--mut)}
-.footer-logo{height:42px;margin:0 auto 16px;opacity:.92}
-.footer-links{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin:18px 0}
+footer{border-top:1px solid var(--line);padding:42px 0 30px;text-align:center;color:var(--faint)}
+.footer-logo{height:44px;margin:0 auto 16px;opacity:.92}
+.footer-links{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin:16px 0}
 .footer-links a{font-size:14px;color:var(--mut)}
-.footer-links a:hover{color:var(--cy)}
-.footer-fine{font-size:12.5px;color:#5f5d74;margin-top:14px}
-.footer-fine a{color:#7d7b94}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.footer-links a:hover{color:var(--cyan)}
+.footer-fine{font-size:12.5px;color:var(--faint);margin-top:12px}
+.footer-fine a{color:var(--mut)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero-badge{animation:none}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 </style>
 </head>
-<body>
-
-<div class="glow a"></div><div class="glow b"></div><div class="glow c"></div>
-<div class="grid-bg"></div>
+<body id="top">
 
 <!-- NAV -->
 <nav>
   <div class="nav-in">
-    <a href="#top" class="nav-logo">
-      <img src="https://img1.wsimg.com/isteam/ip/5763d947-9035-4aa7-8e49-fb3046eb2a24/fulllogo_transparent_nobuffer.png/:/rs=w:300,h:218,cg:true,m" alt="TagBack Drone Media">
+    <a href="#top" class="nav-logo" aria-label="TagBack Drone Media home">
+      <img src="https://img1.wsimg.com/isteam/ip/5763d947-9035-4aa7-8e49-fb3046eb2a24/fulllogo_transparent_nobuffer.png/:/rs=w:300,cg:true,m" alt="TagBack Drone Media">
     </a>
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#work">Portfolio</a>
       <a href="#about">About</a>
-      <a href="#book">Coverage</a>
-      <a class="btn btn-primary nav-cta" onclick="bookShoot()">Book a Shoot</a>
+      <a class="btn btn-out nav-cta" onclick="bookShoot()">Book a Shoot</a>
     </div>
-    <button class="nav-toggle" onclick="bookShoot()" aria-label="Book a shoot">
-      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
   </div>
 </nav>
 
-<main id="top">
-
-  <!-- HERO -->
-  <header class="hero">
-    <img class="hero-badge" src="https://img1.wsimg.com/isteam/ip/5763d947-9035-4aa7-8e49-fb3046eb2a24/fulllogo_transparent_nobuffer.png/:/rs=w:440,h:320,cg:true,m" alt="TagBack Drone Media — 25 years of flight">
-    <p class="eyebrow">FAA Part 107 Certified · Denver &amp; Surrounding Suburbs</p>
-    <h1>Aerial video that makes listings <span class="grad">impossible to scroll past.</span></h1>
-    <p class="hero-sub">Cinematic drone tours, FPV flythroughs, and steady-cam walkthroughs that get Denver properties seen, shared, and sold. Booked in seconds — answered within 24 hours.</p>
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <img class="hero-badge" src="https://img1.wsimg.com/isteam/ip/5763d947-9035-4aa7-8e49-fb3046eb2a24/fulllogo_transparent_nobuffer.png/:/rs=w:520,cg:true,m" alt="TagBack Drone Media — 25 years of flight">
+    <h1>Cinematic drone tours that make Denver listings <em>unforgettable.</em></h1>
+    <p class="hero-sub">FPV flythroughs, aerial videography, and steady-cam walkthroughs that get properties seen, shared, and sold. Book a shoot in seconds — answered within 24 hours.</p>
     <div class="hero-cta">
-      <button class="btn btn-primary" onclick="bookShoot()">Book a Shoot
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
-      <a class="btn btn-ghost" href="#work">▶ Watch the Reel</a>
-    </div>
-    <p class="hero-scrolltip">Scroll to see the work ↓</p>
-  </header>
-
-  <!-- TRUST -->
-  <div class="trust">
-    <div class="trust-in">
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/></svg> <b>FAA Part 107</b>&nbsp;Certified Pilot</div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg> <b>25 Years</b>&nbsp;of Flight</div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="7" r="2.5"/><circle cx="18" cy="7" r="2.5"/><path d="M9 12h6l-2 6h-2l-2-6z"/></svg> DJI&nbsp;+&nbsp;Custom <b>FPV</b>&nbsp;Drones</div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg> <b>MLS &amp; Social</b>&nbsp;Ready</div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Serving&nbsp;<b>Denver Metro</b></div>
+      <button class="btn btn-fill" onclick="bookShoot()">Book a Shoot</button>
+      <a class="btn btn-out" href="#work">▶ &nbsp;Watch the Reel</a>
     </div>
   </div>
+</header>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <p class="eyebrow">What I do for you</p>
-        <h2>Three ways to make a property unforgettable</h2>
-        <p>Every shoot is captured, edited, and delivered ready to drop straight into your MLS listing and socials.</p>
-      </div>
-      <div class="cards">
-        <article class="card reveal">
-          <span class="tag">SIGNATURE</span>
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M12 5l7 7-7 7"/><circle cx="4" cy="12" r="1.6"/></svg></div>
-          <h3>FPV Flythrough Tours</h3>
-          <p>One continuous, immersive shot that flies through the front door, up the stairs, and out over the backyard. The footage buyers stop scrolling for — and the reason they book the showing.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <h3>Aerial Videography &amp; Photography</h3>
-          <p>Stunning exterior and neighborhood views that showcase the lot, the location, and the lifestyle. High-resolution stills and video that make the listing look like a magazine spread.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18V8a2 2 0 012-2h2l2-2h4l2 2h2a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><circle cx="12" cy="13" r="3"/></svg></div>
-          <h3>Steady-Cam Walkthroughs</h3>
-          <p>Smooth, cinematic ground-level tours that pair with the aerial footage for complete storytelling — interior to exterior, in one seamless flow that feels like a private showing.</p>
-        </article>
-      </div>
+<!-- TRUST -->
+<div class="trust">
+  <div class="trust-in">
+    <span><b>FAA Part 107</b> Certified</span><span class="trust-dot"></span>
+    <span><b>25 Years</b> of Flight</span><span class="trust-dot"></span>
+    <span>DJI + Custom <b>FPV</b> Drones</span><span class="trust-dot"></span>
+    <span><b>MLS &amp; Social</b> Ready</span><span class="trust-dot"></span>
+    <span>Serving <b>Denver Metro</b></span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What I do for you</p>
+      <h2>Three ways to make a property unforgettable</h2>
+      <p>Every shoot is captured, edited, and delivered ready to drop straight into your MLS listing and socials.</p>
     </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <p class="eyebrow">How it works</p>
-        <h2>From booking to listing-ready in days</h2>
-      </div>
-      <div class="process">
-        <div class="step reveal"><div class="n">1</div><h4>Book in 60 seconds</h4><p>Tell the concierge the property and a time that works. You'll have a confirmation from Heath within 24 hours — even if he's mid-flight.</p></div>
-        <div class="step reveal"><div class="n">2</div><h4>We fly</h4><p>FAA-certified, fully insured shoot using DJI and custom FPV drones plus steady-cam — exterior, interior, and the angles that sell.</p></div>
-        <div class="step reveal"><div class="n">3</div><h4>Delivered fast</h4><p>Edited, color-graded footage back to you in 24–48 hours, sized and ready for MLS, Instagram, and YouTube.</p></div>
-        <div class="step reveal"><div class="n">4</div><h4>You close faster</h4><p>Listings with aerial video get more views, more shares, and more showings. The footage does the selling for you.</p></div>
-      </div>
+    <div class="cards">
+      <article class="card reveal">
+        <span class="num">01 · Signature</span>
+        <h3>FPV Flythrough Tours</h3>
+        <p>One continuous, immersive shot that flies through the front door, up the stairs, and out over the yard. The footage buyers stop scrolling for — and the reason they book the showing.</p>
+      </article>
+      <article class="card reveal">
+        <span class="num">02</span>
+        <h3>Aerial Videography &amp; Photography</h3>
+        <p>Stunning exterior and neighborhood views that showcase the lot, the location, and the lifestyle — high-resolution stills and video that make a listing look like a magazine spread.</p>
+      </article>
+      <article class="card reveal">
+        <span class="num">03</span>
+        <h3>Steady-Cam Walkthroughs</h3>
+        <p>Smooth, cinematic ground-level tours that pair with the aerial footage for complete storytelling — interior to exterior, in one seamless flow that feels like a private showing.</p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PORTFOLIO -->
-  <section id="work">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <p class="eyebrow">The reel</p>
-        <h2>Recent flights over Denver</h2>
-        <p>A few listings that got the TagBack treatment. Real homes, real footage, real results.</p>
-      </div>
-      <div class="reel">
-        <div class="vid reveal"><iframe src="https://player.vimeo.com/video/744005918?title=0&byline=0&portrait=0" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen title="TagBack drone tour 1"></iframe></div>
-        <div class="vid reveal"><iframe src="https://player.vimeo.com/video/719911351?title=0&byline=0&portrait=0" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen title="TagBack drone tour 2"></iframe></div>
-        <div class="vid reveal"><iframe src="https://player.vimeo.com/video/1009661442?title=0&byline=0&portrait=0" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen title="TagBack drone tour 3"></iframe></div>
-      </div>
+<!-- WHY -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why TagBack</p>
+      <h2>Experience you can see in every frame</h2>
     </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap">
-      <div class="about">
-        <div class="about-photo reveal">
-          <img src="https://img1.wsimg.com/isteam/ip/5763d947-9035-4aa7-8e49-fb3046eb2a24/IMG_0075.jpg/:/rs=w:600,h:600,cg:true,m/cr=w:600,h:600" alt="Heath Dugger, owner and pilot of TagBack Drone Media">
-        </div>
-        <div class="reveal">
-          <p class="role">The pilot behind TagBack</p>
-          <h2>Meet Heath Dugger</h2>
-          <p>With over a quarter century of flight experience and 20 years in IT, Heath brings a rare blend of technical precision and aviation skill to real estate videography and commercial drone production.</p>
-          <p>That creativity drives one thing: high-quality, dynamic video that showcases properties from every angle across Denver and the surrounding suburbs — and a personal, hands-on experience from the first call to final delivery.</p>
-          <div class="stats">
-            <div class="stat"><div class="v">25+</div><div class="l">Years of flight</div></div>
-            <div class="stat"><div class="v">Part 107</div><div class="l">FAA certified</div></div>
-            <div class="stat"><div class="v">24–48h</div><div class="l">Delivery</div></div>
-          </div>
-        </div>
-      </div>
+    <div class="why">
+      <div class="why-item reveal"><h4>Over 25 Years of Flight</h4><p>A quarter century of flight experience means aerial videography and interior flythroughs captured with unmatched precision and control.</p></div>
+      <div class="why-item reveal"><h4>FAA Part 107 Certified</h4><p>Every shoot is performed legally and fully insured by a licensed drone pilot — no risk, no shortcuts.</p></div>
+      <div class="why-item reveal"><h4>Built for Real Estate Marketing</h4><p>Aerial, interior, and steady-cam footage optimized for MLS and every social platform, so your listing is ready to post the moment it lands.</p></div>
+      <div class="why-item reveal"><h4>Cinematic Production</h4><p>The latest aerial tech and a filmmaker's eye, so every video captivates buyers from the first second.</p></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- BOOK -->
-  <section id="book" class="book">
-    <div class="wrap">
-      <div class="book-card reveal">
-        <div class="guarantee"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg> Reply guaranteed within 24 hours</div>
-        <h2>Ready to make your next listing fly?</h2>
-        <p>Book a shoot or request a quote in under a minute. The concierge takes your details and the property, and Heath gets back to you fast — even when he's out flying.</p>
-        <button class="btn btn-primary" onclick="bookShoot()">Book Your Shoot
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </button>
-        <div class="book-meta">
-          <span>📧 <a href="mailto:heath@tagbackmedia.com">heath@tagbackmedia.com</a></span>
-          <span>📱 <a href="tel:7204485581">720-448-5581</a></span>
-          <span>📍 Denver &amp; surrounding suburbs</span>
+<!-- PORTFOLIO -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The reel</p>
+      <h2>Recent flights over Denver</h2>
+      <p>Real homes, real footage. A few listings that got the TagBack treatment.</p>
+    </div>
+    <div class="reel">
+      <div class="vid reveal"><iframe src="https://player.vimeo.com/video/744005918?title=0&byline=0&portrait=0" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen title="Drone tour"></iframe></div>
+      <div class="vid reveal"><iframe src="https://player.vimeo.com/video/719911351?title=0&byline=0&portrait=0" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen title="Drone tour"></iframe></div>
+      <div class="vid reveal"><iframe src="https://player.vimeo.com/video/1009661442?title=0&byline=0&portrait=0" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen title="Drone tour"></iframe></div>
+      <div class="vid reveal"><iframe src="https://player.vimeo.com/video/862758772?title=0&byline=0&portrait=0" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen title="Drone tour"></iframe></div>
+      <div class="vid reveal"><iframe src="https://player.vimeo.com/video/735597455?title=0&byline=0&portrait=0" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen title="Drone tour"></iframe></div>
+      <div class="vid reveal"><iframe src="https://player.vimeo.com/video/691548803?title=0&byline=0&portrait=0" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen title="Drone tour"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="about-photo reveal">
+        <img src="https://img1.wsimg.com/isteam/ip/5763d947-9035-4aa7-8e49-fb3046eb2a24/IMG_0075.jpg/:/rs=w:560,h:560,cg:true,m/cr=w:560,h:560" alt="Heath Dugger, owner and pilot of TagBack Drone Media">
+      </div>
+      <div class="reveal">
+        <p class="role">The pilot behind TagBack</p>
+        <h2>Meet Heath Dugger</h2>
+        <p>With over a quarter century of flight experience and 20 years in IT, Heath brings a rare blend of technical precision and aviation skill to real estate videography and commercial drone production.</p>
+        <p>That creativity drives one thing: high-quality, dynamic video that showcases properties from every angle across Denver and the surrounding suburbs — and a personal, hands-on experience from the first call to final delivery.</p>
+        <div class="stats">
+          <div class="stat"><div class="v">25+</div><div class="l">Years of flight</div></div>
+          <div class="stat"><div class="v">Part 107</div><div class="l">FAA certified</div></div>
+          <div class="stat"><div class="v">24–48h</div><div class="l">Delivery</div></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-</main>
+<!-- BOOK -->
+<section id="book" class="book">
+  <div class="wrap">
+    <div class="book-card reveal">
+      <div class="guarantee">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
+        Reply guaranteed within 24 hours
+      </div>
+      <h2>Ready to make your next listing fly?</h2>
+      <p>Book a shoot or request a quote in under a minute. The concierge takes your details and the property, and Heath gets back to you fast — even when he's out flying.</p>
+      <button class="btn btn-fill" onclick="bookShoot()">Book Your Shoot</button>
+      <div class="book-meta">
+        <span>📧 <a href="mailto:heath@tagbackmedia.com">heath@tagbackmedia.com</a></span>
+        <span>📱 <a href="tel:7204485581">720-448-5581</a></span>
+        <span>📍 Denver &amp; surrounding suburbs</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <img class="footer-logo" src="https://img1.wsimg.com/isteam/ip/5763d947-9035-4aa7-8e49-fb3046eb2a24/fulllogo_transparent_nobuffer.png/:/rs=w:260,h:189,cg:true,m" alt="TagBack Drone Media">
+    <img class="footer-logo" src="https://img1.wsimg.com/isteam/ip/5763d947-9035-4aa7-8e49-fb3046eb2a24/fulllogo_transparent_nobuffer.png/:/rs=w:260,cg:true,m" alt="TagBack Drone Media">
     <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#work">Portfolio</a>
-      <a href="#about">About</a>
-      <a onclick="bookShoot()" style="cursor:pointer">Book a Shoot</a>
+      <a href="#services">Services</a><a href="#work">Portfolio</a><a href="#about">About</a><a onclick="bookShoot()" style="cursor:pointer">Book a Shoot</a>
     </div>
-    <p>Cinematic drone tours &amp; aerial media · FAA Part 107 Certified · Denver, Colorado</p>
+    <p style="color:var(--mut);font-weight:300">Cinematic drone tours &amp; aerial media · FAA Part 107 Certified · Denver, Colorado</p>
     <p class="footer-fine">© <span id="yr"></span> TagBack Drone Media. All rights reserved. · Site &amp; Concierge by <a href="https://silvershield.llc">Silver Shield</a></p>
   </div>
 </footer>
@@ -321,12 +298,11 @@ footer{border-top:1px solid var(--line);padding:44px 0 30px;text-align:center;co
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
   function bookShoot(){ if(window.SilverShieldConcierge){ window.SilverShieldConcierge.open(); } else { window.location.href='mailto:heath@tagbackmedia.com'; } }
-  // scroll reveal
-  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:.12});
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 </script>
 
-<!-- THE CONCIERGE (Silver Shield) — kill-switch ready -->
+<!-- THE CONCIERGE — Silver Shield branded bot, kill-switch ready -->
 <script>window.CONCIERGE_CONFIG = { businessName: "TagBack Drone Media", ownerName: "Heath", responseWindow: "24 hours", enabled: true };</script>
 <script src="concierge.js" defer></script>
 

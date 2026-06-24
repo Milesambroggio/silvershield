@@ -61,7 +61,7 @@
 
   /* Launcher */
   .ssc-launch{position:absolute;right:0;bottom:0;display:flex;align-items:center;gap:10px;
-    cursor:pointer;border:none;background:none;padding:0}
+    width:max-content;max-width:290px;cursor:pointer;border:none;background:none;padding:0}
   .ssc-orb{width:62px;height:62px;border-radius:50%;flex:0 0 62px;display:grid;place-items:center;
     background:radial-gradient(circle at 30% 25%,#2a2a40,#13131f);
     border:1px solid rgba(203,213,225,.55);
@@ -74,7 +74,7 @@
     100%{box-shadow:0 10px 34px rgba(0,0,0,.5),0 0 0 0 rgba(203,213,225,0)}}
   .ssc-orb svg{width:30px;height:36px}
   .ssc-nudge{background:#fff;color:#15151d;font-size:13.5px;font-weight:500;line-height:1.35;
-    padding:10px 13px;border-radius:14px 14px 4px 14px;max-width:210px;
+    padding:10px 13px;border-radius:14px 14px 4px 14px;width:200px;flex:0 0 auto;
     box-shadow:0 8px 26px rgba(0,0,0,.28);opacity:0;transform:translateY(8px) scale(.96);
     transition:opacity .4s,transform .4s;pointer-events:none}
   .ssc-nudge.show{opacity:1;transform:none}

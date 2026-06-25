@@ -531,7 +531,7 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
       ['Highlands Ranch',39.5539,-104.9689],['Lone Tree',39.5374,-104.8861],['Parker',39.5186,-104.7614],
       ['Castle Pines',39.4581,-104.8960],['Castle Rock',39.3722,-104.8561]
     ];
-    var hull=[[39.7392,-104.9903],[39.7294,-104.8319],[39.5186,-104.7614],[39.3722,-104.8561],[39.5883,-105.0664]];
+    var hull=[[39.79,-104.93],[39.74,-104.78],[39.55,-104.70],[39.45,-104.71],[39.38,-104.80],[39.34,-104.88],[39.40,-104.99],[39.47,-105.09],[39.60,-105.11],[39.72,-105.03]];
     var m=L.map('svcMap',{scrollWheelZoom:false,zoomControl:true,attributionControl:true});
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap, &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(m);
     L.polygon(hull,{color:'#c0272e',weight:2,dashArray:'7 6',fillColor:'#1f6fb0',fillOpacity:0.12}).addTo(m);

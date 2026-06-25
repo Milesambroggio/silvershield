@@ -1,5 +1,5 @@
 /* =====================================================================
-   SILVER SHIELD — THE CONCIERGE
+   SILVER SHIELD, THE CONCIERGE
    Self-contained, embeddable AI concierge widget for real estate sites.
    Drop one line on any page:  <script src="concierge.js" defer></script>
 
@@ -21,16 +21,16 @@
   window.__silverShieldConciergeLoaded = true;
 
   /* ----------------------------------------------------------------
-     CONFIG — per-client. Override before this script loads via:
+     CONFIG, per-client. Override before this script loads via:
        window.CONCIERGE_CONFIG = { agentName: "...", areas: "...", ... }
      ---------------------------------------------------------------- */
   var DEFAULTS = {
     businessName: "Silver Shield",  // e.g. "Apex Plumbing" / "Reyes Realty"
-    ownerName: "the owner",         // who responds — e.g. "Mike" / "Jordan"
+    ownerName: "the owner",         // who responds, e.g. "Mike" / "Jordan"
     responseWindow: "24 hours",     // the guarantee
-    accent: "#e8b84c",              // gold (brand accent — stars, CTAs)
+    accent: "#e8b84c",              // gold (brand accent, stars, CTAs)
     // ---- Remote kill-switch (the "yank the cord" lever) ----
-    enabled: true,                  // hard on/off — set false to disable instantly
+    enabled: true,                  // hard on/off, set false to disable instantly
     licenseUrl: null,               // JSON URL Silver Shield hosts -> {"active":true}. Fails closed.
     // Live wiring (leave null to run the built-in scripted demo):
     endpoint: null,                 // POST {messages,lead} -> {reply}
@@ -169,7 +169,7 @@
     '<path d="M16 2L2 8v12c0 9 14 16 14 16s14-7 14-16V8L16 2z" fill="none" stroke="url(#sscSilver)" stroke-width="1.7" stroke-linejoin="round"/>' +
     // faint inner silver line for depth
     '<path d="M16 6L6 10v8c0 7 10 12 10 12s10-5 10-12v-8L16 6z" fill="none" stroke="#b8b8c4" stroke-width="0.7" stroke-linejoin="round" opacity="0.5"/>' +
-    // gold star — the brand honor mark
+    // gold star, the brand honor mark
     '<polygon points="16,10 17.4,13.9 21.6,14 18.2,16.7 19.4,20.8 16,18.3 12.6,20.8 13.8,16.7 10.4,14 14.6,13.9" fill="url(#sscGold)"/></svg>';
   var LOCK = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
     '<rect x="5" y="11" width="14" height="9" rx="2" stroke="#cbd5e1" stroke-width="1.7"/>' +
@@ -186,7 +186,7 @@
      ---------------------------------------------------------------- */
   var FLOW = {
     intent: {
-      bot: ["Hi — I'm the concierge for " + CFG.businessName + ". 👋",
+      bot: ["Hi, I'm the concierge for " + CFG.businessName + ". 👋",
             "Even when " + CFG.ownerName + " is away or out on a job, your request won't get missed. Tell me what you need and a time that works, and I'll make sure " + CFG.ownerName + " gets it and replies within " + CFG.responseWindow + ".",
             "What can I help you with?"],
       chips: ["Book an appointment", "Request a quote", "Schedule a visit", "Leave a message"],
@@ -200,7 +200,7 @@
     },
 
     /* ---- REQUEST DETAIL + PREFERRED TIME ---- */
-    need: { bot: ["Got it — a {requestType}. Briefly, what do you need? A sentence is plenty."],
+    need: { bot: ["Got it, a {requestType}. Briefly, what do you need? A sentence is plenty."],
       capture: "notes", next: "pref_date" },
     pref_date: { bot: ["What day works best for you?"],
       chips: ["Today", "Tomorrow", "This week", "Next week"], capture: "prefDate", next: "pref_time" },
@@ -208,13 +208,13 @@
       chips: ["Morning", "Afternoon", "Evening", "Any time"], capture: "prefTime", next: "ask_name" },
 
     /* ---- MESSAGE ONLY ---- */
-    msg_only: { bot: ["Of course — what message would you like me to pass to " + CFG.ownerName + "?"],
+    msg_only: { bot: ["Of course, what message would you like me to pass to " + CFG.ownerName + "?"],
       capture: "notes", next: "ask_name" },
 
     /* ---- CONTACT DETAILS ---- */
-    ask_name: { bot: ["Perfect. Who should " + CFG.ownerName + " get back to — your name?"], capture: "name", next: "ask_email" },
+    ask_name: { bot: ["Perfect. Who should " + CFG.ownerName + " get back to, your name?"], capture: "name", next: "ask_email" },
     ask_email: { bot: ["Thanks, {name}! What's the best email for your confirmation?"], capture: "email", validate: "email", next: "ask_phone" },
-    ask_phone: { bot: ["And a phone number, in case " + CFG.ownerName + " can reach you faster there? (Optional — type \"skip\".)"],
+    ask_phone: { bot: ["And a phone number, in case " + CFG.ownerName + " can reach you faster there? (Optional, type \"skip\".)"],
       capture: "phone", validate: "phone", next: "done" },
 
     done: { build: function () {
@@ -222,10 +222,10 @@
       l.push("You're all set, " + (lead.name || "there") + " ✅");
       var sum = [];
       if (lead.requestType) sum.push(lead.requestType);
-      if (lead.notes && lead.requestType !== "Message") sum.push("— " + lead.notes);
+      if (lead.notes && lead.requestType !== "Message") sum.push("" + lead.notes);
       if (lead.prefDate) sum.push("• " + lead.prefDate + (lead.prefTime ? (" " + lead.prefTime.toLowerCase()) : ""));
       l.push("Here's what I've logged: <b>" + (sum.join(" ") || lead.notes || "your request") + "</b>.");
-      l.push(CFG.ownerName + " has been notified and will confirm within <b>" + CFG.responseWindow + "</b>. Your details are encrypted and visible only to " + CFG.ownerName + " — never sold or shared. 🔒");
+      l.push(CFG.ownerName + " has been notified and will confirm within <b>" + CFG.responseWindow + "</b>. Your details are encrypted and visible only to " + CFG.ownerName + ", never sold or shared. 🔒");
       return l;
     }, end: true, fire: true }
   };
@@ -254,7 +254,7 @@
         '<div class="ssc-head-meta"><h4>' + CFG.businessName + ' Concierge</h4>' +
         '<p><span class="ssc-dot"></span> Online • guaranteed reply in ' + CFG.responseWindow + '</p></div>' +
         '<button class="ssc-close" aria-label="Close">' + X + '</button></div>' +
-      '<div class="ssc-promise">' + CLOCK + '<span>Even when ' + CFG.ownerName + ' is out, your request is <b>logged and answered within ' + CFG.responseWindow + '</b> — guaranteed.</span></div>' +
+      '<div class="ssc-promise">' + CLOCK + '<span>Even when ' + CFG.ownerName + ' is out, your request is <b>logged and answered within ' + CFG.responseWindow + '</b>, guaranteed.</span></div>' +
       '<div class="ssc-secure">' + LOCK + ' Private &amp; encrypted • seen only by <b>' + CFG.ownerName + '</b></div>' +
       '<div class="ssc-body" id="sscBody"></div>' +
       '<div class="ssc-chips" id="sscChips"></div>' +
@@ -346,7 +346,7 @@
 
   function endConversation(s) {
     setChips([]);
-    els.input.placeholder = "Conversation complete — say hi anytime";
+    els.input.placeholder = "Conversation complete, say hi anytime";
     if (s.fire) fireLead();
   }
 
@@ -359,11 +359,11 @@
     if (awaiting) {
       var clean = text.trim();
       if (s.validate === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean)) {
-        botSay("Hmm, that doesn't look like a valid email — mind trying again?"); return;
+        botSay("Hmm, that doesn't look like a valid email, mind trying again?"); return;
       }
       if (s.validate === "phone") {
         if (/^skip$/i.test(clean)) clean = "";
-        else if (clean.replace(/\D/g, "").length < 7) { botSay("That number looks short — try again, or type \"skip\"."); return; }
+        else if (clean.replace(/\D/g, "").length < 7) { botSay("That number looks short, try again, or type \"skip\"."); return; }
       }
       lead[awaiting] = clean;
       if (CFG.endpoint) return relayToLLM(text);
@@ -390,11 +390,11 @@
       body: JSON.stringify({ messages: transcript, lead: lead })
     }).then(function (r) { return r.json(); })
       .then(function (d) { typing(false); addMsg(d.reply || "…", "bot"); })
-      .catch(function () { typing(false); addMsg("Sorry, I hit a snag — but I've saved your info and " + CFG.agentName + " will follow up.", "bot"); });
+      .catch(function () { typing(false); addMsg("Sorry, I hit a snag, but I've saved your info and " + CFG.agentName + " will follow up.", "bot"); });
   }
 
   /* ----------------------------------------------------------------
-     LEAD DELIVERY — private to the agent. Wire CFG.onLead for live use.
+     LEAD DELIVERY, private to the agent. Wire CFG.onLead for live use.
      ---------------------------------------------------------------- */
   function fireLead() {
     var payload = Object.assign({ capturedAt: new Date().toISOString(), source: location.href, transcript: transcript }, lead);
@@ -406,7 +406,7 @@
 
   /* ---- boot ---- */
   /* ----------------------------------------------------------------
-     KILL-SWITCH — bot only runs while the account is active.
+     KILL-SWITCH, bot only runs while the account is active.
      ---------------------------------------------------------------- */
   function disabledNotice() { console.info("[Silver Shield Concierge] Inactive. Contact Silver Shield to reactivate."); }
   function boot() {

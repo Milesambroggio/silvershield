@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -266,10 +267,14 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
 /* ===== custom service-area map ===== */
 .area-grid2{display:grid;grid-template-columns:0.92fr 1.08fr;gap:52px;align-items:center;margin-top:8px}
 @media(max-width:860px){.area-grid2{grid-template-columns:1fr;gap:38px}}
-.svc-map{position:relative;width:100%;max-width:400px;aspect-ratio:68/100;margin:0 auto;
-  background:radial-gradient(circle at 50% 38%,#121838,#0a0e24);border:1px solid rgba(127,170,230,.2);
-  border-radius:18px;box-shadow:0 26px 60px rgba(0,0,0,.4);overflow:visible}
-.svc-map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;border-radius:18px}
+.svc-map{position:relative;width:100%;height:500px;margin:0 auto;background:#0a0e24;
+  border:1px solid rgba(127,170,230,.2);border-radius:18px;overflow:hidden;box-shadow:0 26px 60px rgba(0,0,0,.4);z-index:1}
+@media(max-width:860px){.svc-map{height:420px}}
+.leaflet-container{font-family:var(--body);background:#0a0e24}
+.svc-tip{background:rgba(255,255,255,.95);color:#16263c;font-family:var(--head);font-weight:600;font-size:12px;
+  border:none;border-radius:6px;padding:2px 8px;box-shadow:0 3px 10px rgba(0,0,0,.22);white-space:nowrap}
+.svc-tip:before{display:none}
+.leaflet-control-attribution{font-size:9px;opacity:.7}
 .svc-pin{position:absolute;transform:translate(-50%,-50%);z-index:2}
 .svc-pin .dot{display:block;width:11px;height:11px;border-radius:50%;background:#ff5e57;border:2px solid #fff;
   box-shadow:0 2px 6px rgba(0,0,0,.45);transition:transform .2s,background .2s;cursor:default;
@@ -436,18 +441,7 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
       <p>Every pin is a community we serve, from Denver down to Castle Rock. If you're inside the line, you're covered.</p>
     </div>
     <div class="area-grid2">
-      <div class="svc-map reveal" id="svcMap">
-        <svg viewBox="0 0 68 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <defs><linearGradient id="hullg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f6db0" stop-opacity=".24"/><stop offset="1" stop-color="#c0272e" stop-opacity=".28"/></linearGradient></defs>
-          <g stroke="rgba(127,170,230,.10)" stroke-width=".2">
-            <line x1="0" y1="20" x2="68" y2="20"/><line x1="0" y1="40" x2="68" y2="40"/><line x1="0" y1="60" x2="68" y2="60"/><line x1="0" y1="80" x2="68" y2="80"/>
-            <line x1="17" y1="0" x2="17" y2="100"/><line x1="34" y1="0" x2="34" y2="100"/><line x1="51" y1="0" x2="51" y2="100"/>
-          </g>
-          <polyline points="19.4,5 19.9,27 30,44 37,74 44.7,95" fill="none" stroke="rgba(160,190,235,.16)" stroke-width=".7" stroke-linejoin="round" stroke-linecap="round"/>
-          <polyline points="14.4,36 23.4,50 39.1,55 62.6,59" fill="none" stroke="rgba(160,190,235,.14)" stroke-width=".7" stroke-linejoin="round" stroke-linecap="round"/>
-          <polygon points="19.4,5 49.3,7.4 62.6,59.1 44.7,95 5,42" fill="url(#hullg)" stroke="#e0566a" stroke-width=".5" stroke-dasharray="1.7 1.2" stroke-linejoin="round"/>
-        </svg>
-      </div>
+      <div class="svc-map reveal" id="svcMap"></div>
       <div class="area-panel reveal">
         <p class="lead">Real comfort across <b>11 communities</b> in the south Denver metro.</p>
         <div class="city-check">
@@ -512,6 +506,7 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
   </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
   document.getElementById('yr').textContent=new Date().getFullYear();
   function book(){ if(window.SilverShieldConcierge){window.SilverShieldConcierge.open();}else{window.location.href='mailto:brian@bullerheating.com';} }
@@ -528,21 +523,27 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
   var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,target=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now();(function step(t){var p=Math.min((t-t0)/1100,1);el.textContent=Math.round(p*target)+suf;if(p<1)requestAnimationFrame(step);})(t0);cio.unobserve(el);}});},{threshold:.5});
   document.querySelectorAll('.num[data-count]').forEach(function(el){cio.observe(el);});
 
-  // Service-area map pins (plotted at true relative geography; only Buller's cities)
-  var svcCities=[
-    {n:'Denver',x:19.4,y:5.0},{n:'Aurora',x:49.3,y:7.4},{n:'Englewood',x:19.9,y:27.4},
-    {n:'Littleton',x:14.4,y:35.9},{n:'Columbine',x:5.0,y:42.0},{n:'Centennial',x:40.8,y:43.9},
-    {n:'Highlands Ranch',x:23.4,y:50.4},{n:'Lone Tree',x:39.1,y:54.5},{n:'Parker',x:62.6,y:59.1},
-    {n:'Castle Pines',x:37.2,y:73.9},{n:'Castle Rock',x:44.7,y:95.0}
-  ];
-  var svcMap=document.getElementById('svcMap');
-  if(svcMap){ svcCities.forEach(function(c,i){
-    var p=document.createElement('div');
-    p.className='svc-pin '+(c.x<34?'right':'left');
-    p.style.left=(c.x/68*100)+'%'; p.style.top=c.y+'%';
-    p.innerHTML='<span class="dot" style="animation-delay:'+(i*0.18)+'s"></span><span class="lbl">'+c.n+'</span>';
-    svcMap.appendChild(p);
-  }); }
+  // Real service-area map (Leaflet + OpenStreetMap/CARTO tiles). Markers at true coordinates; only Buller's cities.
+  if (document.getElementById('svcMap') && window.L) {
+    var cities=[
+      ['Denver',39.7392,-104.9903],['Aurora',39.7294,-104.8319],['Englewood',39.6478,-104.9878],
+      ['Littleton',39.6133,-105.0166],['Columbine',39.5883,-105.0664],['Centennial',39.5807,-104.8772],
+      ['Highlands Ranch',39.5539,-104.9689],['Lone Tree',39.5374,-104.8861],['Parker',39.5186,-104.7614],
+      ['Castle Pines',39.4581,-104.8960],['Castle Rock',39.3722,-104.8561]
+    ];
+    var hull=[[39.7392,-104.9903],[39.7294,-104.8319],[39.5186,-104.7614],[39.3722,-104.8561],[39.5883,-105.0664]];
+    var m=L.map('svcMap',{scrollWheelZoom:false,zoomControl:true,attributionControl:true});
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap, &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(m);
+    L.polygon(hull,{color:'#c0272e',weight:2,dashArray:'7 6',fillColor:'#1f6fb0',fillOpacity:0.12}).addTo(m);
+    var pts=[];
+    cities.forEach(function(c){
+      L.circleMarker([c[1],c[2]],{radius:6,color:'#fff',weight:2,fillColor:'#c0272e',fillOpacity:1})
+        .addTo(m).bindTooltip(c[0],{permanent:true,direction:'right',className:'svc-tip',offset:[7,0]});
+      pts.push([c[1],c[2]]);
+    });
+    m.fitBounds(pts,{padding:[40,40]});
+    setTimeout(function(){m.invalidateSize();m.fitBounds(pts,{padding:[40,40]});},350);
+  }
 </script>
 
 <script>window.CONCIERGE_CONFIG = { businessName: "Buller Heating", ownerName: "Brian", responseWindow: "24 hours", enabled: true };</script>

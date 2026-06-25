@@ -262,6 +262,32 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
   box-shadow:0 0 0 9999px rgba(10,14,34,.34);display:grid;place-items:center}
 .map-cover-label{font-family:var(--head);font-weight:700;font-size:13px;letter-spacing:.03em;color:#fff;
   background:rgba(192,39,46,.94);padding:7px 14px;border-radius:30px;box-shadow:0 8px 20px rgba(0,0,0,.35);white-space:nowrap}
+
+/* ===== custom service-area map ===== */
+.area-grid2{display:grid;grid-template-columns:0.92fr 1.08fr;gap:52px;align-items:center;margin-top:8px}
+@media(max-width:860px){.area-grid2{grid-template-columns:1fr;gap:38px}}
+.svc-map{position:relative;width:100%;max-width:400px;aspect-ratio:68/100;margin:0 auto;
+  background:radial-gradient(circle at 50% 38%,#121838,#0a0e24);border:1px solid rgba(127,170,230,.2);
+  border-radius:18px;box-shadow:0 26px 60px rgba(0,0,0,.4);overflow:visible}
+.svc-map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;border-radius:18px}
+.svc-pin{position:absolute;transform:translate(-50%,-50%);z-index:2}
+.svc-pin .dot{display:block;width:11px;height:11px;border-radius:50%;background:#ff5e57;border:2px solid #fff;
+  box-shadow:0 2px 6px rgba(0,0,0,.45);transition:transform .2s,background .2s;cursor:default;
+  animation:pinPulse 2.8s ease-in-out infinite}
+@keyframes pinPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,94,87,.5),0 2px 6px rgba(0,0,0,.45)}50%{box-shadow:0 0 0 7px rgba(255,94,87,0),0 2px 6px rgba(0,0,0,.45)}}
+.svc-pin .lbl{position:absolute;top:50%;transform:translateY(-50%);white-space:nowrap;
+  font-family:var(--head);font-weight:600;font-size:12.5px;color:#eaf1ff;text-shadow:0 1px 5px rgba(5,8,25,.95),0 0 3px rgba(5,8,25,.9);transition:color .2s}
+.svc-pin.right .lbl{left:15px}
+.svc-pin.left .lbl{right:15px;text-align:right}
+.svc-pin:hover{z-index:6}
+.svc-pin:hover .dot{transform:scale(1.3);background:#5fd6ee}
+.svc-pin:hover .lbl{color:#5fd6ee}
+.area-panel .lead{color:#dbe6f5;font-size:1.08rem;font-weight:300;margin-bottom:6px}
+.area-panel .lead b{color:#fff;font-weight:700}
+.city-check{display:grid;grid-template-columns:1fr 1fr;gap:9px 22px;margin:22px 0 24px}
+.city-check span{display:flex;align-items:center;gap:9px;color:#cdddf0;font-size:14.5px}
+.city-check svg{width:16px;height:16px;color:#ff5e57;flex:0 0 16px}
+.area-panel .area-note{color:#9fb6d4;font-size:13.5px;margin-bottom:20px}
 </style>
 </head>
 <body id="top">
@@ -407,15 +433,40 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
     <div class="sec-head reveal">
       <p class="eyebrow">Where we work</p>
       <h2>We've got the South Denver metro covered</h2>
-      <p>From Castle Rock up to Aurora, reliable comfort is never far away. The highlighted zone is the area we keep comfortable.</p>
+      <p>Every pin is a community we serve, from Denver down to Castle Rock. If you're inside the line, you're covered.</p>
     </div>
-    <div class="map-wrap reveal">
-      <iframe title="Buller Heating service area, South Denver metro" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Highlands%20Ranch%2C%20Colorado&z=10&output=embed"></iframe>
-      <div class="map-cover" style="top:-8%;left:26%;width:62%;height:106%"><span class="map-cover-label">✓ Buller service area</span></div>
-      <div class="map-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg> Buller Covered</div>
+    <div class="area-grid2">
+      <div class="svc-map reveal" id="svcMap">
+        <svg viewBox="0 0 68 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs><linearGradient id="hullg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f6db0" stop-opacity=".24"/><stop offset="1" stop-color="#c0272e" stop-opacity=".28"/></linearGradient></defs>
+          <g stroke="rgba(127,170,230,.10)" stroke-width=".2">
+            <line x1="0" y1="20" x2="68" y2="20"/><line x1="0" y1="40" x2="68" y2="40"/><line x1="0" y1="60" x2="68" y2="60"/><line x1="0" y1="80" x2="68" y2="80"/>
+            <line x1="17" y1="0" x2="17" y2="100"/><line x1="34" y1="0" x2="34" y2="100"/><line x1="51" y1="0" x2="51" y2="100"/>
+          </g>
+          <polyline points="19.4,5 19.9,27 30,44 37,74 44.7,95" fill="none" stroke="rgba(160,190,235,.16)" stroke-width=".7" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="14.4,36 23.4,50 39.1,55 62.6,59" fill="none" stroke="rgba(160,190,235,.14)" stroke-width=".7" stroke-linejoin="round" stroke-linecap="round"/>
+          <polygon points="19.4,5 49.3,7.4 62.6,59.1 44.7,95 5,42" fill="url(#hullg)" stroke="#e0566a" stroke-width=".5" stroke-dasharray="1.7 1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="area-panel reveal">
+        <p class="lead">Real comfort across <b>11 communities</b> in the south Denver metro.</p>
+        <div class="city-check">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Denver</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Aurora</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Englewood</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Littleton</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Columbine</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Centennial</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Highlands Ranch</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Lone Tree</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Parker</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Castle Pines</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Castle Rock</span>
+        </div>
+        <p class="area-note">HVAC licensing is handled at the county level, so if we don't yet hold one in yours, we can almost always obtain it. Just ask.</p>
+        <button class="btn btn-out" onclick="book()" style="border-color:rgba(127,192,255,.5);color:#fff;background:rgba(255,255,255,.07)">Not sure if you're covered? Ask us</button>
+      </div>
     </div>
-    <p class="map-caption">Proudly serving <b>Castle Pines</b> · <b>Highlands Ranch</b> · <b>Denver</b> · <b>Centennial</b> · <b>Castle Rock</b> · <b>Littleton</b> · <b>Aurora</b> · <b>Columbine</b> · <b>Englewood</b> · <b>Lone Tree</b> · <b>Parker</b><br>HVAC licensing is handled at the county level, so if we don't yet hold one in yours, we can almost always obtain it. Just ask.</p>
-    <div class="area-cta reveal"><button class="btn btn-out" onclick="book()" style="border-color:rgba(127,192,255,.5);color:#fff;background:rgba(255,255,255,.07)">Check My Area</button></div>
   </div>
 </section>
 
@@ -476,6 +527,22 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
   // Animated counters
   var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,target=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now();(function step(t){var p=Math.min((t-t0)/1100,1);el.textContent=Math.round(p*target)+suf;if(p<1)requestAnimationFrame(step);})(t0);cio.unobserve(el);}});},{threshold:.5});
   document.querySelectorAll('.num[data-count]').forEach(function(el){cio.observe(el);});
+
+  // Service-area map pins (plotted at true relative geography; only Buller's cities)
+  var svcCities=[
+    {n:'Denver',x:19.4,y:5.0},{n:'Aurora',x:49.3,y:7.4},{n:'Englewood',x:19.9,y:27.4},
+    {n:'Littleton',x:14.4,y:35.9},{n:'Columbine',x:5.0,y:42.0},{n:'Centennial',x:40.8,y:43.9},
+    {n:'Highlands Ranch',x:23.4,y:50.4},{n:'Lone Tree',x:39.1,y:54.5},{n:'Parker',x:62.6,y:59.1},
+    {n:'Castle Pines',x:37.2,y:73.9},{n:'Castle Rock',x:44.7,y:95.0}
+  ];
+  var svcMap=document.getElementById('svcMap');
+  if(svcMap){ svcCities.forEach(function(c,i){
+    var p=document.createElement('div');
+    p.className='svc-pin '+(c.x<34?'right':'left');
+    p.style.left=(c.x/68*100)+'%'; p.style.top=c.y+'%';
+    p.innerHTML='<span class="dot" style="animation-delay:'+(i*0.18)+'s"></span><span class="lbl">'+c.n+'</span>';
+    svcMap.appendChild(p);
+  }); }
 </script>
 
 <script>window.CONCIERGE_CONFIG = { businessName: "Buller Heating", ownerName: "Brian", responseWindow: "24 hours", enabled: true };</script>

@@ -17,7 +17,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -276,9 +275,6 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
   border:none;border-radius:6px;padding:2px 8px;box-shadow:0 3px 10px rgba(0,0,0,.22);white-space:nowrap}
 .svc-tip:before{display:none}
 .leaflet-control-attribution{font-size:9px;opacity:.7}
-.marker-icon{width:16px!important;height:16px!important;margin-left:-8px!important;margin-top:-8px!important;background:#fff!important;border:3px solid #c0272e!important;border-radius:50%!important;box-shadow:0 2px 7px rgba(0,0,0,.5)!important;cursor:move!important}
-.marker-icon-middle{width:12px!important;height:12px!important;margin-left:-6px!important;margin-top:-6px!important;background:#ffd0cc!important;border:2px solid #c0272e!important;border-radius:50%!important;opacity:.95!important;cursor:copy!important}
-.svc-hint{background:rgba(192,39,46,.96);color:#fff;font-family:var(--head);font-weight:600;font-size:12px;padding:6px 12px;border-radius:20px;box-shadow:0 4px 14px rgba(0,0,0,.3);white-space:nowrap}
 .svc-pin{position:absolute;transform:translate(-50%,-50%);z-index:2}
 .svc-pin .dot{display:block;width:11px;height:11px;border-radius:50%;background:#ff5e57;border:2px solid #fff;
   box-shadow:0 2px 6px rgba(0,0,0,.45);transition:transform .2s,background .2s;cursor:default;
@@ -511,7 +507,6 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
 <script>
   document.getElementById('yr').textContent=new Date().getFullYear();
   function book(){ if(window.SilverShieldConcierge){window.SilverShieldConcierge.open();}else{window.location.href='mailto:brian@bullerheating.com';} }
@@ -538,16 +533,8 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
     ];
     var hull=[[39.7392,-104.9903],[39.7294,-104.8319],[39.5186,-104.7614],[39.3722,-104.8561],[39.5883,-105.0664]];
     var m=L.map('svcMap',{scrollWheelZoom:false,zoomControl:true,attributionControl:true});
-    window.SVC_MAP=m;
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap, &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(m);
-    var poly=L.polygon(hull,{color:'#c0272e',weight:2,dashArray:'7 6',fillColor:'#1f6fb0',fillOpacity:0.12}).addTo(m);
-    window.SVC_POLY=poly;
-    setTimeout(function(){
-      try{ poly.pm.enable({allowSelfIntersection:false}); }catch(e){}
-      var hint=L.control({position:'topright'});
-      hint.onAdd=function(){ var d=L.DomUtil.create('div','svc-hint'); d.innerHTML='Drag the red dots to reshape the border'; return d; };
-      hint.addTo(m);
-    }, 800);
+    L.polygon(hull,{color:'#c0272e',weight:2,dashArray:'7 6',fillColor:'#1f6fb0',fillOpacity:0.12}).addTo(m);
     var pts=[];
     cities.forEach(function(c){
       L.circleMarker([c[1],c[2]],{radius:6,color:'#fff',weight:2,fillColor:'#c0272e',fillOpacity:1})

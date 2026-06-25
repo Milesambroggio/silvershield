@@ -146,7 +146,82 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
 .footer-fine a{color:#8b96a4}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* ===== thermal effects ===== */
+.thermal-bar{height:5px;background:linear-gradient(90deg,#2f6db0,#5aa0e0,#c0272e,#e8552d,#2f6db0);background-size:300% 100%;animation:thermshift 9s linear infinite}
+@keyframes thermshift{to{background-position:300% 0}}
+.nav-logo img{transition:transform .25s,filter .25s}
+.nav-logo:hover img{transform:scale(1.05);filter:drop-shadow(0 3px 12px rgba(192,39,46,.35))}
+.hero-art{position:relative}
+.hero-art::before{content:"";position:absolute;inset:-22px;border-radius:26px;z-index:-1;filter:blur(48px);opacity:.55;
+  background:conic-gradient(from 0deg,rgba(47,109,176,.6),rgba(35,42,99,.4),rgba(192,39,46,.6),rgba(232,85,45,.4),rgba(47,109,176,.6));animation:auraspin 18s linear infinite}
+@keyframes auraspin{to{transform:rotate(360deg)}}
+.hero-art img{animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.thermo{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+.thermo .ico{width:26px;height:26px}
+.thermo .cool{color:#2f6db0;animation:glowC 3s ease-in-out infinite}
+.thermo .warm{color:#e8552d;animation:glowW 3s ease-in-out infinite}
+.thermo .seg{width:54px;height:4px;border-radius:3px;background:linear-gradient(90deg,#2f6db0,#c0272e)}
+@keyframes glowC{0%,100%{filter:drop-shadow(0 0 0 rgba(47,109,176,0))}50%{filter:drop-shadow(0 0 7px rgba(47,109,176,.75))}}
+@keyframes glowW{0%,100%{filter:drop-shadow(0 0 0 rgba(232,85,45,0))}50%{filter:drop-shadow(0 0 7px rgba(232,85,45,.75))}}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;transform:skewX(-20deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transition:left .55s}
+.btn:hover::after{left:140%}
+
+/* ===== stat band + richer why ===== */
+.stats-band{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:18px;margin-bottom:48px}
+.stat-card{background:linear-gradient(180deg,#fff,var(--bg2));border:1px solid var(--line);border-radius:14px;padding:26px 20px;text-align:center;position:relative;overflow:hidden}
+.stat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--heat))}
+.stat-card .num{font-family:var(--head);font-weight:900;font-size:2.4rem;line-height:1;
+  background:linear-gradient(120deg,var(--blue),var(--heat));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat-card .lbl{font-size:13.5px;color:var(--slate);margin-top:9px;font-weight:700}
+.why-item{position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.why-item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--heat);transform:scaleY(0);transform-origin:top;transition:transform .35s}
+.why-item:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(16,30,60,.12)}
+.why-item:hover::before{transform:scaleY(1)}
+.why-ico{transition:background .3s,transform .3s}
+.why-ico svg{transition:color .3s}
+.why-item:hover .why-ico{background:linear-gradient(135deg,var(--blue),var(--heat));transform:scale(1.06)}
+.why-item:hover .why-ico svg{color:#fff}
+
+/* ===== brands marquee ===== */
+.brands{background:var(--bg2);overflow:hidden;padding:62px 0}
+.marquee{display:flex;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.mq-track{display:flex;gap:18px;padding:6px 9px;flex:0 0 auto;animation:mqscroll 42s linear infinite;will-change:transform}
+.brands:hover .mq-track{animation-play-state:paused}
+@keyframes mqscroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 9px))}}
+.brand-chip{flex:0 0 auto;width:160px;height:90px;background:#fff;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;padding:18px;transition:transform .25s,box-shadow .25s}
+.brand-chip:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(16,30,60,.14)}
+.brand-chip img{max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:.62;transition:filter .3s,opacity .3s}
+.brand-chip:hover img{filter:none;opacity:1}
+
+/* ===== radar service area ===== */
+.area-sec{background:linear-gradient(160deg,#161a3d,var(--blue-d));color:#fff;overflow:hidden}
+.radar-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+@media(max-width:860px){.radar-grid{grid-template-columns:1fr;text-align:center}}
+.radar{position:relative;width:100%;max-width:420px;aspect-ratio:1;margin:0 auto;border-radius:50%;
+  background:radial-gradient(circle,rgba(95,160,224,.12),rgba(10,14,40,.55));border:1px solid rgba(127,192,255,.25);overflow:hidden}
+.ring{position:absolute;border:1px solid rgba(127,192,255,.16);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
+.ring.r1{width:34%;height:34%}.ring.r2{width:67%;height:67%}.ring.r3{width:99%;height:99%}
+.cross{position:absolute;background:rgba(127,192,255,.12)}
+.cross.h{top:50%;left:0;right:0;height:1px}.cross.v{left:50%;top:0;bottom:0;width:1px}
+.sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(192,39,46,.5),rgba(192,39,46,.12) 22%,transparent 40%);animation:radarspin 4.5s linear infinite}
+@keyframes radarspin{to{transform:rotate(360deg)}}
+.hub{position:absolute;top:50%;left:50%;width:15px;height:15px;border-radius:50%;background:var(--heat);transform:translate(-50%,-50%);animation:hubpulse 2.4s infinite;z-index:2}
+@keyframes hubpulse{0%{box-shadow:0 0 0 0 rgba(192,39,46,.55)}70%{box-shadow:0 0 0 22px rgba(192,39,46,0)}100%{box-shadow:0 0 0 0 rgba(192,39,46,0)}}
+.hub-label{position:absolute;top:calc(50% + 15px);left:50%;transform:translateX(-50%);font-family:var(--head);font-weight:700;font-size:10.5px;letter-spacing:.14em;color:#bcd6ee}
+.pin{position:absolute;width:9px;height:9px;border-radius:50%;background:#7fc0ff;transform:translate(-50%,-50%);box-shadow:0 0 9px rgba(127,192,255,.85);animation:pinpulse 3s ease-in-out infinite}
+@keyframes pinpulse{0%,100%{opacity:.5}50%{opacity:1}}
+.area-content h2{color:#fff;margin-bottom:14px}
+.area-content .eyebrow{background:linear-gradient(90deg,#7fc0ff,#ff8a6a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.area-chips{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0}
+@media(max-width:860px){.area-chips{justify-content:center}}
+.area-chips span{border:1px solid rgba(127,192,255,.3);border-radius:30px;padding:7px 15px;font-size:13.5px;font-weight:500;transition:.2s;cursor:default}
+.area-chips span:hover{background:rgba(127,192,255,.16);border-color:#7fc0ff}
+.area-content .area-note{color:#bcd6ee;font-size:14px;max-width:520px}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero-art img,.hero-art::before,.sweep,.hub,.pin,.mq-track,.thermal-bar,.thermo .cool,.thermo .warm{animation:none}}
 </style>
 </head>
 <body id="top">
@@ -173,6 +248,11 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
 <header class="hero">
   <div class="wrap hero-in">
     <div class="reveal">
+      <div class="thermo" aria-hidden="true">
+        <svg class="ico cool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 2v20M4.2 7l15.6 10M19.8 7L4.2 17M12 5l2.4-2.2M12 5L9.6 2.8M12 19l2.4 2.2M12 19l-2.4 2.2M3.8 8.7l.3 3M20.2 8.7l-.3 3M3.8 15.3l.3-3M20.2 15.3l-.3-3"/></svg>
+        <span class="seg"></span>
+        <svg class="ico warm" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2c.5 3-1.6 4.3-2.6 6.2-.8 1.5-.5 3 .3 3.8.2-1.3 1-2.3 2-2.9-.3 1.8.6 2.6 1.4 3.6.7.9 1 2 .6 3.3a4.8 4.8 0 01-3.7 3.4 5 5 0 01-6-4.9c0-2.7 1.8-4.2 2.4-6.1.3 1 .9 1.5 1.7 1.9C8.3 9.7 9 6.7 13 2z"/></svg>
+      </div>
       <p class="eyebrow">Serving the South Denver metro since 2000</p>
       <h1>Honest heating &amp; air conditioning, <span>at an affordable rate.</span></h1>
       <p class="hero-sub">Family-run, licensed, and insured. We give you a straight inspection and the service you actually need, no unnecessary upsells. Just reliable comfort for your home.</p>
@@ -197,6 +277,8 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
     <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M12 3v18"/></svg> Most Installs in 1 Day</span>
   </div>
 </div>
+
+<div class="thermal-bar"></div>
 
 <!-- SERVICES -->
 <section id="services">
@@ -239,6 +321,12 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
       <p class="eyebrow">Why homeowners choose Buller</p>
       <h2>The honest HVAC company you've been looking for</h2>
     </div>
+    <div class="stats-band reveal">
+      <div class="stat-card"><div class="num" data-count="25" data-suffix="+">0</div><div class="lbl">Years serving Denver</div></div>
+      <div class="stat-card"><div class="num">1 Day</div><div class="lbl">Most installs completed</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Unnecessary upsells</div></div>
+      <div class="stat-card"><div class="num" data-count="11" data-suffix="+">0</div><div class="lbl">Cities covered</div></div>
+    </div>
     <div class="why">
       <div class="why-item reveal"><div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div><h4>Honest &amp; Reliable</h4><p>We give you a straight inspection of the real issue and the service you need, never pushing unnecessary upsells. Integrity first.</p></div>
       <div class="why-item reveal"><div class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h4>Affordable Prices</h4><p>As a smaller company we carry far less overhead than the big guys, and we pass those savings straight to you with competitive pricing.</p></div>
@@ -252,23 +340,44 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
 
 <!-- BRANDS -->
 <section class="brands">
-  <div class="wrap reveal">
-    <p>We service and install all major brands</p>
-    <div class="brand-row">
-      <span>Carrier</span><span>Lennox</span><span>Rheem</span><span>Ruud</span><span>Goodman</span><span>Bryant</span><span>Amana</span><span>Payne</span><span>Navien</span><span>Bradford White</span><span>Fujitsu</span><span>GE</span>
-    </div>
+  <div class="wrap sec-head reveal" style="margin-bottom:34px">
+    <p class="eyebrow">Trusted across every system</p>
+    <h2>We service &amp; install all major brands</h2>
+  </div>
+  <div class="marquee" aria-label="Brands we service: Carrier, Lennox, Rheem, Ruud, Goodman, Bryant, Amana, Payne, Navien, Bradford White, Fujitsu, GE">
+    <div class="mq-track" id="mqTrack"></div>
   </div>
 </section>
 
 <!-- SERVICE AREA -->
 <section id="area" class="area-sec">
-  <div class="wrap reveal">
-    <p class="eyebrow">Where we work</p>
-    <h2>Proudly serving the South Denver metro</h2>
-    <div class="area-list">
-      <span>Castle Pines</span><span>Highlands Ranch</span><span>Denver</span><span>Centennial</span><span>Castle Rock</span><span>Littleton</span><span>Aurora</span><span>Columbine</span><span>Englewood</span><span>Lone Tree</span><span>Parker</span>
+  <div class="wrap">
+    <div class="radar-grid">
+      <div class="radar reveal" aria-hidden="true">
+        <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+        <div class="cross h"></div><div class="cross v"></div>
+        <div class="sweep"></div>
+        <div class="pin" style="top:25%;left:41%;animation-delay:.1s"></div>
+        <div class="pin" style="top:31%;left:64%;animation-delay:.5s"></div>
+        <div class="pin" style="top:45%;left:77%;animation-delay:.9s"></div>
+        <div class="pin" style="top:63%;left:69%;animation-delay:.3s"></div>
+        <div class="pin" style="top:74%;left:47%;animation-delay:.7s"></div>
+        <div class="pin" style="top:67%;left:27%;animation-delay:1.1s"></div>
+        <div class="pin" style="top:49%;left:21%;animation-delay:.2s"></div>
+        <div class="pin" style="top:33%;left:31%;animation-delay:.6s"></div>
+        <div class="pin" style="top:57%;left:55%;animation-delay:1s"></div>
+        <div class="hub"></div><div class="hub-label">BULLER</div>
+      </div>
+      <div class="area-content reveal">
+        <p class="eyebrow">Where we work</p>
+        <h2>Coverage across the South Denver metro</h2>
+        <p class="area-note">From Castle Rock up to Aurora, we keep homes comfortable across the south metro. HVAC licensing is handled at the county level, so if we don't yet hold one in your county, we can almost always obtain it. Just ask.</p>
+        <div class="area-chips">
+          <span>Castle Pines</span><span>Highlands Ranch</span><span>Denver</span><span>Centennial</span><span>Castle Rock</span><span>Littleton</span><span>Aurora</span><span>Columbine</span><span>Englewood</span><span>Lone Tree</span><span>Parker</span>
+        </div>
+        <button class="btn btn-blue" onclick="book()" style="margin-top:6px">Check My Area</button>
+      </div>
     </div>
-    <p class="area-note">HVAC licensing is done at the county level. If we don't currently hold a license in your county, we can almost always obtain one, just ask.</p>
   </div>
 </section>
 
@@ -319,6 +428,16 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
   function book(){ if(window.SilverShieldConcierge){window.SilverShieldConcierge.open();}else{window.location.href='mailto:info@bullerheating.com';} }
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  // Brands carousel
+  var brands=['carrier_logo.png','Lennox-logo.png','Rheem_logo.png','goodman-logo.png','bryant-logo.png','Amana-Logo.png','navien-logo.png','Bradford_White_logo.png','rudd-logo.jpg','payne-logo.png','Fujitsu-Logo.png','GE-logo.png'];
+  var bbase='https://bullerheating.com/wp-content/uploads/2025/03/';
+  var mq=document.getElementById('mqTrack');
+  if(mq){ mq.innerHTML=brands.concat(brands).map(function(n){return '<div class="brand-chip"><img loading="lazy" alt="HVAC brand we service" src="'+bbase+n+'"></div>';}).join(''); }
+
+  // Animated counters
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,target=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now();(function step(t){var p=Math.min((t-t0)/1100,1);el.textContent=Math.round(p*target)+suf;if(p<1)requestAnimationFrame(step);})(t0);cio.unobserve(el);}});},{threshold:.5});
+  document.querySelectorAll('.num[data-count]').forEach(function(el){cio.observe(el);});
 </script>
 
 <script>window.CONCIERGE_CONFIG = { businessName: "Buller Heating", ownerName: "Brian", responseWindow: "24 hours", enabled: true };</script>

@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -507,6 +508,7 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
 <script>
   document.getElementById('yr').textContent=new Date().getFullYear();
   function book(){ if(window.SilverShieldConcierge){window.SilverShieldConcierge.open();}else{window.location.href='mailto:brian@bullerheating.com';} }
@@ -535,7 +537,9 @@ footer{background:var(--ink);color:#aeb8c4;padding:44px 0 30px;text-align:center
     var m=L.map('svcMap',{scrollWheelZoom:false,zoomControl:true,attributionControl:true});
     window.SVC_MAP=m;
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap, &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(m);
-    L.polygon(hull,{color:'#c0272e',weight:2,dashArray:'7 6',fillColor:'#1f6fb0',fillOpacity:0.12}).addTo(m);
+    var poly=L.polygon(hull,{color:'#c0272e',weight:2,dashArray:'7 6',fillColor:'#1f6fb0',fillOpacity:0.12}).addTo(m);
+    window.SVC_POLY=poly;
+    if(poly.pm){ poly.pm.enable({allowSelfIntersection:false, removeVertexOn:'contextmenu'}); }
     var pts=[];
     cities.forEach(function(c){
       L.circleMarker([c[1],c[2]],{radius:6,color:'#fff',weight:2,fillColor:'#c0272e',fillOpacity:1})
